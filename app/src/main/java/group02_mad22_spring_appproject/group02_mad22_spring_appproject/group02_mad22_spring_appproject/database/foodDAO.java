@@ -1,4 +1,4 @@
-package group02_mad22_spring_appproject.group02_mad22_spring_appproject.group02_mad22_spring_appproject.database;
+package group02_mad22_spring_appproject.group02_mad22_spring_appproject.group02_mad22_spring_appproject;
 
-public interface foodDAO {
+public interface FoodDAO {
 }

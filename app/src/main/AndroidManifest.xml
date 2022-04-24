@@ -10,10 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group02_MAD22_Spring_AppProject">
         <activity
+            android:name=".activities.searchactivity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.loginactivity.ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".activities.detailsactivity.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.mainactivity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
