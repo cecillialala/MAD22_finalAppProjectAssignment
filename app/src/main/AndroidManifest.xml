@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="group02_mad22_spring_appproject.group02_mad22_spring_appproject.group02_mad22_spring_appproject">
+    package="dk.au.group02_mad22_spring_appproject">
 
     <application
         android:allowBackup="true"
@@ -10,17 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group02_MAD22_Spring_AppProject">
         <activity
-            android:name=".activities.searchactivity.SearchActivity"
+            android:name="dk.au.group02_mad22_spring_appproject.activities.searchactivity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.loginactivity.ui.login.LoginActivity"
+            android:name="dk.au.group02_mad22_spring_appproject.activities.loginactivity.ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".activities.detailsactivity.DetailActivity"
+            android:name="dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.mainactivity.MainActivity"
+            android:name="dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
