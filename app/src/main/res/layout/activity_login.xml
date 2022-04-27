@@ -74,10 +74,10 @@
         app:layout_constraintVertical_bias="0.201" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/Create_Account_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Skip login"
+        android:text="Create_Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
