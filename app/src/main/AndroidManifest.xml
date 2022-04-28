@@ -10,17 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group02_MAD22_Spring_AppProject">
         <activity
-            android:name="dk.au.group02_mad22_spring_appproject.activities.searchactivity.SearchActivity"
+            android:name=".activities.Login_Activity.Login_Activity"
             android:exported="false" />
         <activity
-            android:name="dk.au.group02_mad22_spring_appproject.activities.loginactivity.ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name="dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity"
+            android:name=".activities.loginactivity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity"
+            android:name=".activities.loginactivity.Register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.searchactivity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.detailsactivity.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.mainactivity.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

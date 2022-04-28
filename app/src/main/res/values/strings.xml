@@ -10,4 +10,11 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="search_bar_hint">Search for your favourite meal!</string>
+    <string name="categories">"Categories"</string>
+    <string name="menu">"Menu"</string>
+    <string name="menu_bon_apetit">"Bon Apetit!"</string>
+    <string name="get_fat">"Get Fat"</string>
+    <string name="main_button_exit">Exit</string>
+    <string name="main_button_search">Search</string>
+    <string name="meal_categories">meal_categories</string>
 </resources>
