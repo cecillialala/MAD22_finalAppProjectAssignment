@@ -17,7 +17,7 @@ import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 //https://developer.android.com/reference/android/widget/Adapter
-//Course Lesson ADAPTERS ITSMAP
+//Course Lesson ADAPTERS MAD
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
 
     List<Meals.Meal> meals;
@@ -38,7 +38,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     @Override
     public FavouriteAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_main_recyclerview, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.meal_row, parent, false);
         return new ViewHolder(view);
     }
 
@@ -47,8 +47,9 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     @Override
     public void onBindViewHolder(@NonNull FavouriteAdapter.ViewHolder holder, int position) {
         holder.faveMealName.setText(meals.get(position).getStrMeal());
-       // TODO skal fejrn // efter at enabels fragments
-        // Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
+        //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
+// TODO her
+       // Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
     }
 
     @Override
@@ -62,8 +63,8 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
         public ImageView faveMealImage;
         public ViewHolder(View itemView) {
             super(itemView);
-            faveMealName = (TextView) itemView.findViewById(R.id.recycler_TextViewID);
-            faveMealImage = (ImageView) itemView.findViewById(R.id.recyclerview_imageID);
+            faveMealName = (TextView) itemView.findViewById(R.id.fave_meal_name);
+            faveMealImage = (ImageView) itemView.findViewById(R.id.fave_meal_img);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

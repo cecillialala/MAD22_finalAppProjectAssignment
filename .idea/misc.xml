@@ -6,22 +6,41 @@
         <entry key="..\:/Users/bal11/AndroidStudioProjects/Group02_MAD22_Spring_AppProject2/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/bal11/AndroidStudioProjects/Group02_MAD22_Spring_AppProject2/app/src/main/res/layout/activity_main.xml" value="0.254981884057971" />
         <entry key="..\:/Users/bal11/AndroidStudioProjects/Group02_MAD22_Spring_AppProject2/app/src/main/res/layout/activity_main_recyclerview.xml" value="0.25" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_circle.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_favorite_border.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_link.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_map.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_play.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/image_outline.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/shadow_bottom_to_top.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2646258503401361" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout-w936dp/activity_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_category.xml" value="0.20520833333333333" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_detailed.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_home.xml" value="0.11614583333333334" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_login.xml" value="0.20260416666666667" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_login2.xml" value="0.15185185185185185" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main.xml" value="0.20208333333333334" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main_recyclerview.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_register.xml" value="0.15677083333333333" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_search.xml" value="0.20208333333333334" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/category_fragment.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/category_recyclerview.xml" value="0.1" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_map.xml" value="0.2774358974358974" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_meal.xml" value="0.20208333333333334" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_view_pager_header.xml" value="0.20208333333333334" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/main_fragment_favorite.xml" value="0.2774358974358974" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_category.xml" value="0.10144927536231885" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_favourite.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_map.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_category.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_category_shimmer.xml" value="0.20625" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_meal.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_view_pager_header.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_view_pager_header_shimmer.xml" value="0.20625" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/main_fragment_favorite.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/meal_row.xml" value="0.11614583333333334" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/nav_header.xml" value="0.11614583333333334" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/navigation_view_header.xml" value="0.2774358974358974" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/menu/drawer_menu.xml" value="0.24444444444444444" />
       </map>
     </option>
   </component>

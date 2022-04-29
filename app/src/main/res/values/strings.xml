@@ -16,4 +16,22 @@
     <string name="main_button_exit">Exit</string>
     <string name="main_button_search">Search</string>
     <string name="meal_categories">meal_categories</string>
+    <string name="search_your_recipes">Search Your Recipes…</string>
+
+    <string name="category">Category</string>
+    <string name="country">Country</string>
+    <string name="instructions">INSTRUCTIONS</string>
+    <string name="dot_loading">...</string>
+    <string name="md_menu">Menu Overview</string>
+    <string name="md_map">Map</string>
+    <string name="md_fav">Favorites</string>
+    <string name="Ingredients">INGREDIENTS</string>
+    <string name="youtube">YOUTUBE</string>
+    <string name="source">SOURCE</string>
+    <string name="favorite">Favorite</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="suggestion">"Are you craving for "</string>
+
+
 </resources>
