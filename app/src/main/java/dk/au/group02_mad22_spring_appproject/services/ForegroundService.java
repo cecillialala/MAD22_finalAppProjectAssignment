@@ -84,6 +84,7 @@ public class ForegroundService extends Service {
                 Log.e(TAG, "run: Error when updating drink: ", e);
             }
 
+
             updateBackground();
         });
     }
