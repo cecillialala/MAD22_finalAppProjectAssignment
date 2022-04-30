@@ -14,4 +14,15 @@
     <color name="dark_title_text">#f9f3eb</color>
     <color name="dark_header_text">#eae1dd</color>
     <color name="dark_light_header">#e05840</color>
+    <color name="colorPrimary">#542313</color>
+
+    <color name="colorPrimaryDark">#542313</color>
+    <color name="colorAccent">#872303</color>
+    <color name="colorNull">#00000000</color>
+    <color name="colorIcons">#7C7F81</color>
+    <color name="colorPrimaryText">#1e1e1e</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteDark">#DBDBDB</color>
+    <color name="colorPrimaryLight">#853f29</color>
+    <color name="colorBackground">#F4F7F7</color>
 </resources>

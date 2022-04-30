@@ -56,6 +56,10 @@ public class Repository extends AppCompatActivity {
         db.mealsDao().insertAllMeals(m);
 
     }
+    public void delete(Meals.Meal m){
+        db.mealsDao().delete(m);
+
+    }
 
 
     public static class DetailPresenter {

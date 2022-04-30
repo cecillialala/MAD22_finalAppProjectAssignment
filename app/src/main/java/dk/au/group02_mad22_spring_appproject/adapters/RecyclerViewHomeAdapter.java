@@ -34,7 +34,7 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
     @NonNull
     @Override
     public RecyclerViewHomeAdapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.category_recyclerview,
+        View view = LayoutInflater.from(context).inflate(R.layout.item_recycler_category,
                 viewGroup, false);
         return new RecyclerViewHolder(view);
     }
@@ -43,8 +43,7 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
     public void onBindViewHolder(@NonNull RecyclerViewHomeAdapter.RecyclerViewHolder viewHolder, int i) {
 
         String strCategoryThum = categories.get(i).getStrCategoryThumb();
-        // TODO husk at lave en logo eller Icon
-        //Picasso.get().load(strCategoryThum).placeholder(R.drawable.ic_circle).into(viewHolder.categoryThumb);
+        Picasso.get().load(strCategoryThum).placeholder(R.drawable.ic_circle).into(viewHolder.categoryThumb);
 
         String strCategoryName = categories.get(i).getStrCategory();
         viewHolder.categoryName.setText(strCategoryName);
@@ -57,9 +56,9 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
     }
 
     static class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @BindView(R.id.mealThumb)
+        @BindView(R.id.categoryThumb)
         ImageView categoryThumb;
-        @BindView(R.id.mealName)
+        @BindView(R.id.categoryName)
         TextView categoryName;
         RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -83,3 +82,4 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
         void onClick(View view, int position);
     }
 }
+

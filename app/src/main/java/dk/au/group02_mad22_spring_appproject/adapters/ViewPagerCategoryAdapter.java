@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
+import dk.au.group02_mad22_spring_appproject.activities.category.CategoryFragment;
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 
 public class ViewPagerCategoryAdapter extends FragmentPagerAdapter {
@@ -25,15 +26,15 @@ public class ViewPagerCategoryAdapter extends FragmentPagerAdapter {
     //TODO should enabels when fragments will be created
     @Override
     public Fragment getItem(int i) {
-        //CategoryFragment fragment = new CategoryFragment();
+        CategoryFragment fragment = new CategoryFragment();
         Bundle args = new Bundle();
         args.putString("EXTRA_DATA_NAME", categories.get(i).getStrCategory());
         args.putString("EXTRA_DATA_DESC", categories.get(i).getStrCategoryDescription());
         args.putString("EXTRA_DATA_IMAGE", categories.get(i).getStrCategoryThumb());
-        //fragment.setArguments(args);
-        //return fragment;
+        fragment.setArguments(args);
+        return fragment;
         // TODO remove the next return
-        return null;
+
     }
 
     @Override

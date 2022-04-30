@@ -28,10 +28,10 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:scaleType="centerCrop"
-                />
+                android:src="@drawable/shadow_bottom_to_top" />
             <TextView
                 android:id="@+id/mealName"
-
+                android:textColor="@color/colorWhite"
                 android:textSize="17sp"
                 android:layout_margin="15dp"
 
