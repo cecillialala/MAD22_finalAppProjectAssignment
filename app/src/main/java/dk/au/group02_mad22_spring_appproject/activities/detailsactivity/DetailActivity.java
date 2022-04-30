@@ -90,11 +90,11 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if(list.size() != 0) {
             for(Meals.Meal m : list) {
                 if(m.getStrMeal().equals(mealName)) {
-                    love.setImageResource(R.drawable.ic_favorite);
+                    love.setImageResource(R.drawable.ic_filled_star);
                     return;
                 }
             }
-            love.setImageResource(R.drawable.ic_favorite_border);
+            love.setImageResource(R.drawable.ic_outline_star);
         }
     }
 
@@ -285,13 +285,13 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
                 for(Meals.Meal m : list) {
                     if(m.getIdMeal().equals(tempMeal.getIdMeal())) {
                         vm.delete(m);
-                        love.setImageResource(R.drawable.ic_favorite_border);
+                        love.setImageResource(R.drawable.ic_outline_star);
                         return;
                     }
                 }
             }
             vm.addMeals(tempMeal);
-            love.setImageResource(R.drawable.ic_favorite);
+            love.setImageResource(R.drawable.ic_filled_star);
         });
     }
 

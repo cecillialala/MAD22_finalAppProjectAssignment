@@ -141,7 +141,7 @@
                 </androidx.cardview.widget.CardView>
                 <ImageView
                     android:id="@+id/love"
-                    android:src="@drawable/ic_favorite_border"
+                    android:src="@drawable/ic_outline_star"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -151,7 +151,7 @@
                     android:focusable="true"
                     android:background="?android:attr/selectableItemBackgroundBorderless"
                     tools:ignore="NewApi"
-                    app:tint="@color/colorAccent" />
+                    app:tint="#FFC107" />
             </LinearLayout>
 
             <TextView
