@@ -4,11 +4,14 @@ import static dk.au.group02_mad22_spring_appproject.activities.mainactivity.Main
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,6 +29,7 @@ import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.Database.AppDatabase;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
+import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouriteFragment;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.DetailView;
@@ -129,16 +133,46 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         }
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.drawer_menu, menu);
+        return true;
+    }
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        //noinspection SimplifiableIfStatement
+        switch (item.getItemId()) {
+            case R.id.nav_map:
+                //startActivity(new Intent(this, MapFragment.class));
+                break;
+            case R.id.nav_favourite:
+                startActivity(new Intent(this, FavouriteFragment.class));
+                break;
+            case android.R.id.home :
+                onBackPressed();
+                return true;
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
+    }
+/*    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home :
                 onBackPressed();
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+
+    }*/
 
     @Override
     public void showLoading() {
@@ -352,4 +386,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
     public void onErrorLoading(String message) {
         Utils.showDialogMessage(this, "Error: ", message);
     }
+
+
 }

@@ -13,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/get_fat"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
@@ -25,6 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:textColor="@color/colorAccent"
+        android:textColorLink="@color/colorAccent"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -51,14 +56,14 @@
         android:id="@+id/Register_Btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="164dp"
         android:text="@string/Register_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_pt_repeatID"
         app:layout_constraintVertical_bias="0.363" />
+
 
     <EditText
         android:id="@+id/login_pt_mailID"
@@ -73,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_pt_nameID"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.136" />
 
     <EditText
         android:id="@+id/login_pt_passwordID"
@@ -84,24 +89,10 @@
         android:text="password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_pt_mailID"
-        app:layout_constraintVertical_bias="0.041" />
-
-    <EditText
-        android:id="@+id/register_pt_repeatID"
-        android:layout_width="296dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="repeat password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_pt_passwordID"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <TextView
         android:id="@+id/LoginAcount_Reg_text"
@@ -115,15 +106,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Register_Btn"
         app:layout_constraintVertical_bias="0.065" />
 
-    <TextView
-        android:id="@+id/Create_Account_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skip register and login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginAcount_Reg_text"
-        app:layout_constraintVertical_bias="0.099" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
