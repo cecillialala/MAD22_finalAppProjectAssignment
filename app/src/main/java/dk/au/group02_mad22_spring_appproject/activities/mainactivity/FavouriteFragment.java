@@ -24,7 +24,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     FavouriteAdapter adapter;
     private List<Meals.Meal> listOfMeals;
     AppDatabase db;
-
+// TODO Lav den om til LiveData
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

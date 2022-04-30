@@ -10,16 +10,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity;
@@ -43,7 +48,7 @@ public class Register extends AppCompatActivity {
         mEmail      = findViewById(R.id.login_pt_mailID);
         mPassword   = findViewById(R.id.login_pt_passwordID);
        // mPhone      = findViewById(R.id.phone);
-        mRegisterBtn= findViewById(R.id.register_btnID);
+        mRegisterBtn= findViewById(R.id.Register_Btn);
         mLoginBtn   = findViewById(R.id.LoginAcount_Reg_text);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -84,7 +89,26 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser user = fAuth.getCurrentUser();
+                                    FirebaseUser fuser = fAuth.getCurrentUser();
+
+                                    Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
+                                    userID = fAuth.getCurrentUser().getUid();
+                                    DocumentReference documentReference = fStore.collection("users").document(userID);
+                                    Map<String,Object> user = new HashMap<>();
+                                    user.put("fName",fullName);
+                                    user.put("email",email);
+                                    user.put("password",password);
+                                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d(TAG, "onFailure: " + e.toString());
+                                        }
+                                    });
                                     Toast.makeText(Register.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                 } else {
@@ -96,6 +120,12 @@ public class Register extends AppCompatActivity {
                                 }
                             }
                         });
+            }
+        });
+        mLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             }
         });
     }

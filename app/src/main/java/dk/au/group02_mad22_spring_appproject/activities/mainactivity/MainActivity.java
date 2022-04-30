@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,6 +27,7 @@ import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.category.CategoryActivity;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
+import dk.au.group02_mad22_spring_appproject.activities.loginactivity.LoginActivity;
 import dk.au.group02_mad22_spring_appproject.adapters.RecyclerViewHomeAdapter;
 import dk.au.group02_mad22_spring_appproject.adapters.ViewPagerHeaderAdapter;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
@@ -148,5 +150,12 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         } else {
             super.onBackPressed();
         }
+    }
+
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
     }
 }

@@ -32,12 +32,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEmail = findViewById(R.id.login_pt_mailID);
-        mPassword = findViewById(R.id.login_pt_passwordID);
-        //progressBar = findViewById(R.id.progressBar);
+        mEmail = findViewById(R.id.Email);
+        mPassword = findViewById(R.id.password);
+        progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
-        mLoginBtn = findViewById(R.id.register_btnID);
-        mCreateBtn = findViewById(R.id.Create_Account_txt);
+        mLoginBtn = findViewById(R.id.loginBtn);
+        mCreateBtn = findViewById(R.id.createText);
         //forgotTextLink = findViewById(R.id.forgotPassword);
 
 

@@ -334,7 +334,8 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
                     if(m.getIdMeal().equals(tempMeal.getIdMeal())) {
 
                         // TODO her crasher systemet
-                        db.mealsDao().delete(m);
+                        //db.mealsDao().delete(m);
+                        vm.delete(m);
                         love.setImageResource(R.drawable.ic_favorite_border);
                         return;
                     }

@@ -27,5 +27,9 @@ public class DetailsViewModel extends AndroidViewModel {
         repository.insertAllMeals(MealsName);
     }
 
+    public void delete(Meals.Meal m){
+        repository.delete(m);
+    }
+
 
 }
