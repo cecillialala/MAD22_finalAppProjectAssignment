@@ -33,6 +33,7 @@
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_category.xml" value="0.10144927536231885" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_favourite.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_map.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_maps.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_category.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_category_shimmer.xml" value="0.20625" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_meal.xml" value="0.1" />
@@ -42,7 +43,7 @@
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/meal_row.xml" value="0.11614583333333334" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/nav_header.xml" value="0.5" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/navigation_view_header.xml" value="0.2774358974358974" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/menu/drawer_menu.xml" value="0.24444444444444444" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

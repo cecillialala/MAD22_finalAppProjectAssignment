@@ -27,6 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.Database.AppDatabase;
+import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouriteFragment;
@@ -129,7 +130,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
             case R.id.nav_map:
-                //startActivity(new Intent(this, MapFragment.class));
+                startActivity(new Intent(this, MapFragment.class));
                 break;
             case R.id.nav_favourite:
                 startActivity(new Intent(this, FavouriteFragment.class));

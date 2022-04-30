@@ -35,10 +35,10 @@
     <string name="suggestion">"Are you craving for "</string>
 
 
-
-   <string name="Login">Login_btn</string>
+    <string name="Login">Login_btn</string>
     <string name="login_btn">Login</string>
     <string name="Register_btn">Create Account</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 
 </resources>

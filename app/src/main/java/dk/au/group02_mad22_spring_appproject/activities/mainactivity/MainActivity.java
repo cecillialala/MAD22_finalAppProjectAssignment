@@ -25,6 +25,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
 import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_map:
-                //startActivity(new Intent(this, MapFragment.class));
+                startActivity(new Intent(this, MapFragment.class));
                 break;
             case R.id.nav_favourite:
                 startActivity(new Intent(this, FavouriteFragment.class));
