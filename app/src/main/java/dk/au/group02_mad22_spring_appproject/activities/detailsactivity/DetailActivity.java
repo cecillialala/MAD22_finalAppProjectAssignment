@@ -40,53 +40,32 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
     AppDatabase db;
     public Meals.Meal tempMeal = new Meals.Meal();
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
-    @BindView(R.id.appbar)
-    AppBarLayout appBarLayout;
-
-    @BindView(R.id.collapsing_toolbar)
-    CollapsingToolbarLayout collapsingToolbarLayout;
-
-    @BindView(R.id.mealThumb)
-    ImageView mealThumb;
-
-    @BindView(R.id.love)
-    ImageView love;
-
-    @BindView(R.id.category)
-    TextView category;
-
-    @BindView(R.id.country)
-    TextView country;
-
-    @BindView(R.id.instructions)
-    TextView instructions;
-
-    @BindView(R.id.ingredient)
-    TextView ingredients;
-
-    @BindView(R.id.measure)
-    TextView measures;
-
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
-
-    @BindView(R.id.youtube)
-    TextView youtube;
-
-    @BindView(R.id.source)
-    TextView source;
-
+    private TextView category, country,instructions, ingredients, measures, youtube, source;
+    private ImageView mealThumb, love;
+    private Toolbar toolbar;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private ProgressBar progressBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed);
-        ButterKnife.bind(this);
-        // vm = new ViewModelProvider(this).get(DetailsViewModels.class);
+
+
+        toolbar = findViewById(R.id.toolbar);
+        progressBar = findViewById(R.id.progressBar);
+        mealThumb = findViewById(R.id.mealThumb);
+        collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
+        category = findViewById(R.id.category);
+        country = findViewById(R.id.country);
+        instructions = findViewById(R.id.instructions);
+        ingredients = findViewById(R.id.ingredient);
+        measures = findViewById(R.id.measure);
+        youtube = findViewById(R.id.youtube);
+        source = findViewById(R.id.source);
+        love = findViewById(R.id.love);
+
         setupActionBar();
 
         Intent intent = getIntent();
@@ -95,9 +74,11 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         Repository.DetailPresenter presenter = new Repository.DetailPresenter(this);
         presenter.getMealById(mealName);
         vm = new ViewModelProvider(this).get(DetailsViewModel.class);
-        // vm = new ViewModelProvider(this).get(DetailsViewModels.class);
-
         List<Meals.Meal> list= vm.getFoodObject();
+
+
+
+        category.setText(tempMeal.getStrCategory());
 
 // TODO  Make a call from her
       /*  db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "production")
@@ -115,12 +96,13 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
             }
             love.setImageResource(R.drawable.ic_favorite_border);
         }
-
     }
 
     private void setupActionBar() {
+
         setSupportActionBar(toolbar);
         toolbar.setTitleTextAppearance(this, R.style.AppTheme_AppBarOverlay);
+        collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setContentScrimColor(getResources().getColor(R.color.colorWhite));
         collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(R.color.colorPrimary));
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.colorWhite));
@@ -161,6 +143,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         instructions.setText(meal.getStrInstructions());
         setupActionBar();
 
+        //Ingredients
         if (!meal.getStrIngredient1().isEmpty()) {
             ingredients.append("\n \u2022 " + meal.getStrIngredient1());
         }
@@ -206,11 +189,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if (!meal.getStrIngredient15().isEmpty()) {
             ingredients.append("\n \u2022 " + meal.getStrIngredient15());
         }
-
-       /* if (!meal.getStrIngredient16().isEmpty()) {
-            ingredients.append("\n \u2022 " + meal.getStrIngredient16());
-        }
-       */
         if (meal.getStrIngredient16() != null && !meal.getStrIngredient16().trim().isEmpty()){
             ingredients.append("\n \u2022 " + meal.getStrIngredient16());
         }
@@ -227,20 +205,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
             ingredients.append("\n \u2022 " + meal.getStrIngredient20());
         }
 
-       /* if (!meal.getStrIngredient17().isEmpty()) {
-            ingredients.append("\n \u2022 " + meal.getStrIngredient17());
-        }*/
-        /*if (!meal.getStrIngredient18().isEmpty()) {
-            ingredients.append("\n \u2022 " + meal.getStrIngredient18());
-        }*/
-
-       /* if (!meal.getStrIngredient19().isEmpty()) {
-            ingredients.append("\n \u2022 " + meal.getStrIngredient19());
-        }
-        if (!meal.getStrIngredient20().isEmpty()) {
-            ingredients.append("\n \u2022 " + meal.getStrIngredient20());
-        }*/
-
+        //Measures
         if (!meal.getStrMeasure1().isEmpty() && !Character.isWhitespace(meal.getStrMeasure1().charAt(0))) {
             measures.append("\n : " + meal.getStrMeasure1());
         }
@@ -286,15 +251,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if (!meal.getStrMeasure15().isEmpty() && !Character.isWhitespace(meal.getStrMeasure15().charAt(0))) {
             measures.append("\n : " + meal.getStrMeasure15());
         }
-
-
         if (meal.getStrMeasure16() != null && !meal.getStrMeasure16().trim().isEmpty()) {
             measures.append("\n : " + meal.getStrMeasure16());
         }
         if (meal.getStrMeasure17() != null && !meal.getStrMeasure17().trim().isEmpty()) {
             measures.append("\n : " + meal.getStrMeasure17());
         }
-
         if (meal.getStrMeasure18() != null && !meal.getStrMeasure18().trim().isEmpty()) {
             measures.append("\n : " + meal.getStrMeasure18());
         }
@@ -304,15 +266,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if (meal.getStrMeasure20() != null && !meal.getStrMeasure20().trim().isEmpty()) {
             measures.append("\n : " + meal.getStrMeasure20());
         }
-       /* if (meal.getStrMeasure18() != null&& !Character.isWhitespace(meal.getStrMeasure18().charAt(0))) {
-            measures.append("\n : " + meal.getStrMeasure18());
-        }
-        if (meal.getStrMeasure19()!= null && !Character.isWhitespace(meal.getStrMeasure19().charAt(0))) {
-            measures.append("\n : " + meal.getStrMeasure19());
-        }
-        if (meal.getStrMeasure20()!= null && !Character.isWhitespace(meal.getStrMeasure20().charAt(0))) {
-            measures.append("\n : " + meal.getStrMeasure20());
-        }*/
 
         youtube.setOnClickListener(v -> {
             Intent intentYoutube = new Intent(Intent.ACTION_VIEW);
@@ -327,25 +280,19 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         });
 
         love.setOnClickListener(v -> {
-            //List<Meals.Meal> list = db.mealsDao().getAllMeals();
             List<Meals.Meal> list= vm.getFoodObject();
             if(list.size() != 0) {
                 for(Meals.Meal m : list) {
                     if(m.getIdMeal().equals(tempMeal.getIdMeal())) {
-
-                        // TODO her crasher systemet
-                        //db.mealsDao().delete(m);
                         vm.delete(m);
                         love.setImageResource(R.drawable.ic_favorite_border);
                         return;
                     }
                 }
             }
-            //db.mealsDao().insertAllMeals(tempMeal);
             vm.addMeals(tempMeal);
             love.setImageResource(R.drawable.ic_favorite);
         });
-
     }
 
     @Override
@@ -353,3 +300,4 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         Utils.showDialogMessage(this, "Error: ", message);
     }
 }
+
