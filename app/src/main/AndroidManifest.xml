@@ -76,7 +76,8 @@
         </activity>
         <activity
             android:name=".activities.searchactivity.SearchActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".activities.detailsactivity.DetailActivity"
             android:exported="false" />
