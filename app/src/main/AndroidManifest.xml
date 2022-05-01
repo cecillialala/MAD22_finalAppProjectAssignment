@@ -24,6 +24,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
+
+        <service android:name=".services.ForegroundService"
+        android:enabled="true"
+            android:exported="false"></service>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

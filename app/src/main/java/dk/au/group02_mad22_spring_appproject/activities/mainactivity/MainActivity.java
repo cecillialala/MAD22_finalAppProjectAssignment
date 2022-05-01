@@ -39,6 +39,7 @@ import dk.au.group02_mad22_spring_appproject.model.Categories;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.HomeView;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
+import dk.au.group02_mad22_spring_appproject.services.ForegroundService;
 
 public class MainActivity extends AppCompatActivity implements HomeView, NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -59,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         ButterKnife.bind(this);
         // TODO have to enable Service
         //Starting the service
-        //Intent serviceIntent = new Intent(this.getApplicationContext(), FoodService.class);
-        //startService(serviceIntent);
+        Intent serviceIntent = new Intent(this.getApplicationContext(), ForegroundService.class);
+        startService(serviceIntent);
         vm = new ViewModelProvider(this).get(MainViewModel.class);
         presenter = new Repository.HomePresenter(this);
         presenter.getMeals();
