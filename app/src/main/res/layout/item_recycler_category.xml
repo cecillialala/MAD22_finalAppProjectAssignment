@@ -44,7 +44,7 @@ android:background="#7A222221"
             android:layout_marginBottom="15dp"
             android:gravity="center"
             android:text="Category"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorWhiteDark"
             android:textSize="22sp"
             android:textStyle="bold" />
     </RelativeLayout>

@@ -49,7 +49,7 @@ public class Register extends AppCompatActivity {
         mPassword   = findViewById(R.id.login_pt_passwordID);
        // mPhone      = findViewById(R.id.phone);
         mRegisterBtn= findViewById(R.id.Register_Btn);
-        mLoginBtn   = findViewById(R.id.LoginAcount_Reg_text);
+        //mLoginBtn   = findViewById(R.id.LoginAcount_Reg_text);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
