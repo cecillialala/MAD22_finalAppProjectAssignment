@@ -44,7 +44,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
     private ImageView mealThumb, love;
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
-    private ProgressBar progressBar;
+
 
 
     @Override
@@ -54,7 +54,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
 
 
         toolbar = findViewById(R.id.toolbar);
-        progressBar = findViewById(R.id.progressBar);
+
         mealThumb = findViewById(R.id.mealThumb);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         category = findViewById(R.id.category);
@@ -122,15 +122,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         }
     }
 
-    @Override
-    public void showLoading() {
-        progressBar.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideLoading() {
-        progressBar.setVisibility(View.INVISIBLE);
-    }
 
     //https://square.github.io/picasso/
     @Override

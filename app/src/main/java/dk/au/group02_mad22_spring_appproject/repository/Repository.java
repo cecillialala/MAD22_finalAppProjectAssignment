@@ -71,13 +71,13 @@ public class Repository extends AppCompatActivity {
 
         public void getMealById(String mealName) {
 
-            view.showLoading();
+
 
             Utils.getApi().getMealByName(mealName)
                     .enqueue(new Callback<Meals>() {
                         @Override
                         public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
-                            view.hideLoading();
+
                             if (response.isSuccessful() && response.body() != null) {
                                 view.setMeal(response.body().getMeals().get(0));
                             } else {
@@ -87,7 +87,7 @@ public class Repository extends AppCompatActivity {
 
                         @Override
                         public void onFailure(@NonNull Call<Meals> call, @NonNull Throwable t) {
-                            view.hideLoading();
+
                             view.onErrorLoading(t.getLocalizedMessage());
                         }
                     });
