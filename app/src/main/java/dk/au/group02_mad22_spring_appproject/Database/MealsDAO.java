@@ -7,6 +7,8 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.google.common.util.concurrent.ListenableFuture;
+
 import java.util.List;
 //https://developer.android.com/topic/libraries/architecture/room
 //https://developer.android.com/training/data-storage/room
@@ -29,5 +31,8 @@ public interface MealsDAO {
 
     @Query("SELECT * FROM mealsTable where favourite LIKE :status")
     List<Meals.Meal> getFavouriteMeals(Integer status);
+
+    @Query("SELECT * FROM mealsTable WHERE strMeal LIKE :name LIMIT 1")
+    List<Meals.Meal> findMeal(String name);
 
 }

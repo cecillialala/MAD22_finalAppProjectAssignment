@@ -46,20 +46,20 @@ public class Repository extends AppCompatActivity {
         return repository;
     }
 
+    public List<Meals.Meal> findMeal(String name){
+        return db.mealsDao().findMeal(name);
+    }
 
 
     public List<Meals.Meal> getAllMeals(){
         return db.mealsDao().getAllMeals();
-
     }
 
     public void insertAllMeals(Meals.Meal m){
         db.mealsDao().insertAllMeals(m);
-
     }
     public void delete(Meals.Meal m){
         db.mealsDao().delete(m);
-
     }
 
 
@@ -95,6 +95,37 @@ public class Repository extends AppCompatActivity {
         }
     }
 
+    public static class SearchPresenter {
+        private SearchView view;
+
+        public SearchPresenter(SearchView view) {
+            this.view = view;
+        }
+
+        public void getMealByName(String mealName) {
+
+            view.showLoading();
+            Call<Meals> mealsCall = Utils.getApi().getMealByName(mealName);
+            mealsCall.enqueue(new Callback<Meals>() {
+                @Override
+                public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
+                    view.hideLoading();
+                    if (response.isSuccessful() && response.body() != null) {
+                        view.setMeals(response.body().getMeals());
+                    } else {
+                        view.onErrorLoading(response.message());
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Meals> call, @NonNull Throwable t) {
+                    view.hideLoading();
+                    view.onErrorLoading(t.getLocalizedMessage());
+                }
+            });
+
+        }
+    }
 
     public static class CategoryPresenter {
         private CategoryView view;
@@ -127,7 +158,6 @@ public class Repository extends AppCompatActivity {
 
         }
     }
-
 
     public static class HomePresenter {
 
@@ -190,14 +220,10 @@ public class Repository extends AppCompatActivity {
                 }
             });
         }
+
     }
 
-
-
-
     private FirebaseLoginWithEmailAuth emailAuth;
-
-
 
     //region Authentication
 

@@ -10,6 +10,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.List;
 
+import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.models.Meal;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
 
@@ -17,31 +18,31 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 public class SearchViewModel extends AndroidViewModel {
 
     private Repository repository;
-    private LiveData<List<Meal>> mealsList;
+    private List<Meals.Meal> mealsList;
 
     public SearchViewModel(@NonNull Application app) {
         super(app);
         this.repository = Repository.getInstance(app);
-        this.mealsList = repository.getMealslist();
+        this.mealsList = repository.getAllMeals();
     }
 
-    public void addMeal(Meal meal) {
-        repository.addMeal(meal);
-    }
+    //public void addMeal(Meals meal) {
+    //    repository.addMeal(meal);
+    //}
 
-    public void setMeal(String mealName) {
-        repository.searchMeal(mealName, getApplication());
-    }
+    //public void setMeal(String mealName) {
+    //    repository.searchMeal(mealName, getApplication());
+    //}
 
-    public ListenableFuture<Meal> findMeal(String mealName) {
+    public List<Meals.Meal> findMeal(String mealName) {
         return repository.findMeal(mealName);
     }
 
-    public LiveData<List<Meal>> getMealsList() {
+    public List<Meals.Meal> getMealsList() {
         return mealsList;
     }
 
-    public LiveData<List<Meal>> getCurrentMealsList() {
-        return repository.getCurrentMealslist();
-    }
+    //public LiveData<List<Meals>> getCurrentMealsList() {
+    //    return repository.getCurrentMealslist();
+    //}
 }
