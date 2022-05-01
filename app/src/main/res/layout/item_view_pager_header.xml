@@ -11,14 +11,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="10dp"
+
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
         <RelativeLayout
             android:layout_width="match_parent"
+
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/mealThumb"
-
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_height="match_parent" />
@@ -28,13 +29,16 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:scaleType="centerCrop"
+
                 android:src="@drawable/shadow_bottom_to_top" />
             <TextView
                 android:id="@+id/mealName"
                 android:textColor="@color/colorWhite"
                 android:textSize="17sp"
-                android:layout_margin="15dp"
-
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:background="#A6222221"
                 android:layout_alignParentBottom="true"
                 android:text="Meal Name"
                 android:layout_width="match_parent"

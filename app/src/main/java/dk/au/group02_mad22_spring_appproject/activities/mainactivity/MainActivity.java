@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     public void setCategory(List<Categories.Category> category) {
         RecyclerViewHomeAdapter homeAdapter = new RecyclerViewHomeAdapter(category, this);
         recyclerViewCategory.setAdapter(homeAdapter);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 3,
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2,
                 GridLayoutManager.VERTICAL, false);
         recyclerViewCategory.setLayoutManager(layoutManager);
         recyclerViewCategory.setNestedScrollingEnabled(true);
