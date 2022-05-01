@@ -23,7 +23,7 @@ public class ViewPagerCategoryAdapter extends FragmentPagerAdapter {
     }
 
 
-    //TODO should enabels when fragments will be created
+
     @Override
     public Fragment getItem(int i) {
         CategoryFragment fragment = new CategoryFragment();
@@ -33,7 +33,7 @@ public class ViewPagerCategoryAdapter extends FragmentPagerAdapter {
         args.putString("EXTRA_DATA_IMAGE", categories.get(i).getStrCategoryThumb());
         fragment.setArguments(args);
         return fragment;
-        // TODO remove the next return
+
 
     }
 

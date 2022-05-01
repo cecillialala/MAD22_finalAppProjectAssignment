@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -24,7 +25,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
+import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
+import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
 import dk.au.group02_mad22_spring_appproject.activities.category.CategoryActivity;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
 import dk.au.group02_mad22_spring_appproject.activities.loginactivity.LoginActivity;
@@ -34,17 +38,19 @@ import dk.au.group02_mad22_spring_appproject.api.Utils;
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.HomeView;
+import dk.au.group02_mad22_spring_appproject.repository.Repository;
+import dk.au.group02_mad22_spring_appproject.services.ForegroundService;
 
 public class MainActivity extends AppCompatActivity implements HomeView, NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     public static final String EXTRA_CATEGORY = "category";
     public static final String EXTRA_POSITION = "position";
     public static final String EXTRA_DETAIL = "detail";
-
+    private MainViewModel vm;
     @BindView(R.id.viewPagerHeader) ViewPager viewPagerMeal;
     @BindView(R.id.recyclerCategory) RecyclerView recyclerViewCategory;
 
-    HomePresenter presenter;
+    Repository.HomePresenter presenter;
 
     /* https://jakewharton.github.io/butterknife/ */
     @Override
@@ -54,10 +60,10 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         ButterKnife.bind(this);
         // TODO have to enable Service
         //Starting the service
-        //Intent serviceIntent = new Intent(this.getApplicationContext(), FoodService.class);
-        //startService(serviceIntent);
-
-        presenter = new HomePresenter(this);
+        Intent serviceIntent = new Intent(this.getApplicationContext(), ForegroundService.class);
+        startService(serviceIntent);
+        vm = new ViewModelProvider(this).get(MainViewModel.class);
+        presenter = new Repository.HomePresenter(this);
         presenter.getMeals();
         presenter.getCategories();
 
@@ -107,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     public void setCategory(List<Categories.Category> category) {
         RecyclerViewHomeAdapter homeAdapter = new RecyclerViewHomeAdapter(category, this);
         recyclerViewCategory.setAdapter(homeAdapter);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 3,
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2,
                 GridLayoutManager.VERTICAL, false);
         recyclerViewCategory.setLayoutManager(layoutManager);
         recyclerViewCategory.setNestedScrollingEnabled(true);
@@ -131,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_map:
-                //startActivity(new Intent(this, MapFragment.class));
+                startActivity(new Intent(this, MapFragment.class));
                 break;
             case R.id.nav_favourite:
                 startActivity(new Intent(this, FavouriteFragment.class));

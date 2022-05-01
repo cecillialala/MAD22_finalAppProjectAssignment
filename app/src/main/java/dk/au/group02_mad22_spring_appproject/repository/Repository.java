@@ -15,6 +15,7 @@ import java.util.function.Consumer;
 
 import dk.au.group02_mad22_spring_appproject.Database.AppDatabase;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
+import dk.au.group02_mad22_spring_appproject.model.Categories;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -71,13 +72,13 @@ public class Repository extends AppCompatActivity {
 
         public void getMealById(String mealName) {
 
-            view.showLoading();
+
 
             Utils.getApi().getMealByName(mealName)
                     .enqueue(new Callback<Meals>() {
                         @Override
                         public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
-                            view.hideLoading();
+
                             if (response.isSuccessful() && response.body() != null) {
                                 view.setMeal(response.body().getMeals().get(0));
                             } else {
@@ -87,7 +88,7 @@ public class Repository extends AppCompatActivity {
 
                         @Override
                         public void onFailure(@NonNull Call<Meals> call, @NonNull Throwable t) {
-                            view.hideLoading();
+
                             view.onErrorLoading(t.getLocalizedMessage());
                         }
                     });
@@ -128,7 +129,68 @@ public class Repository extends AppCompatActivity {
     }
 
 
+    public static class HomePresenter {
 
+        private HomeView view;
+
+        public HomePresenter(HomeView view) {
+            this.view = view;
+        }
+
+        /* https://square.github.io/retrofit/ */
+
+        public void getMeals() {
+            view.showLoading();
+            Call<Meals> mealsCall = Utils.getApi().getMeal();
+
+            mealsCall.enqueue(new Callback<Meals>() {
+                @Override
+                public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
+                    view.hideLoading();
+
+                    if (response.isSuccessful() && response.body() != null) {
+                        view.setMeal(response.body().getMeals());
+                    }
+                    else {
+                        view.onErrorLoading(response.message());
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Meals> call, @NonNull Throwable t) {
+                    view.hideLoading();
+                    view.onErrorLoading(t.getLocalizedMessage());
+                }
+            });
+        }
+
+
+        public void getCategories() {
+            view.showLoading();
+
+            Call<Categories> categoriesCall = Utils.getApi().getCategories();
+            categoriesCall.enqueue(new Callback<Categories>() {
+                @Override
+                public void onResponse(@NonNull Call<Categories> call, @NonNull Response<Categories> response) {
+                    view.hideLoading();
+
+                    if (response.isSuccessful() && response.body() != null) {
+                        view.setCategory(response.body().getCategories());
+                    }
+                    else {
+                        view.onErrorLoading(response.message());
+
+                    }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Categories> call, @NonNull Throwable t) {
+                    view.hideLoading();
+                    view.onErrorLoading(t.getLocalizedMessage());
+                }
+            });
+        }
+    }
 
 
 

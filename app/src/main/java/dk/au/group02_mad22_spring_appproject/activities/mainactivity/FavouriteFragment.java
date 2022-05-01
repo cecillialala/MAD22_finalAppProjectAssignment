@@ -16,6 +16,7 @@ import java.util.List;
 import dk.au.group02_mad22_spring_appproject.Database.AppDatabase;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
+import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
 import dk.au.group02_mad22_spring_appproject.adapters.FavouriteAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
@@ -23,6 +24,7 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 public class FavouriteFragment extends FragmentActivity implements FavouriteAdapter.OnItemClickListener{
     FavouriteAdapter adapter;
     private List<Meals.Meal> listOfMeals;
+
     AppDatabase db;
 // TODO Lav den om til LiveData
 
@@ -37,7 +39,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
         // TODO Lav den om til HomeViewModel
 
 
-        DetailsViewModel vm = new ViewModelProvider(this).get(DetailsViewModel.class);
+        MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
         List<Meals.Meal> list= vm.getFoodObject();
         listOfMeals = list;
         adapter = new FavouriteAdapter(list);
