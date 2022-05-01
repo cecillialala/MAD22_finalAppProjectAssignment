@@ -29,7 +29,6 @@ public class ForegroundService extends Service {
     List<Meal> mealList = new ArrayList<>();
     public static final String TAG = "foregroundservice";
     public static final String Service_Channel = "ServiceChannel";
-    public static final int NotificationID = 6;
     boolean start = false;
 
     public ForegroundService(){
@@ -74,7 +73,7 @@ public class ForegroundService extends Service {
                 //TODO
                 Meal randomMeal = getallMeal.get(random.nextInt(getallMeal.size()));
                 Notification notification = getNotification(randomMeal);
-                startForeground(NotificationID, notification);
+                startForeground(1, notification);
             }
 
             try {
