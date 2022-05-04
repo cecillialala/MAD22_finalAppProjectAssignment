@@ -40,6 +40,14 @@
     <string name="Register_btn">Create Account</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="map">MAP</string>
+    <string name="login_and_see">Login and see your favorite meals!</string>
+    <string name="new_here">New Here ?  Create Account</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="create_and_eat">Create a free account and get eating!</string>
+    <string name="by_agreeing_part_1">By registering you agree to Get Fats</string>
+    <string name="by_agreeing_part_2">Terms and Services and Privacy Policy</string>
 
 
 </resources>

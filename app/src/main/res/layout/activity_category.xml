@@ -16,21 +16,31 @@
         android:theme="@style/AppBarLayoutTheme">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            android:background="@color/dark_background"
             android:layout_width="match_parent"
+            app:titleTextColor="@color/dark_light_header"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorHeight="3dp"
-            app:tabIndicatorColor="@color/colorPrimary"
+            android:background="@color/dark_background"
+            android:paddingBottom="@dimen/padding_small_10"
+            app:tabContentStart="@dimen/padding_big_20"
+            app:tabIndicatorColor="@color/dark_light_header"
+            app:tabIndicatorHeight="4dp"
             app:tabMode="scrollable"
-            app:tabContentStart="85dp"/>
+            app:tabSelectedTextColor="@color/colorWhiteDark"
+            app:tabTextAppearance="@style/TabText"
+            app:tabTextColor="@color/light_undertitle_text" />
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
+        android:background="@color/dark_background"
         android:layout_height="match_parent"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

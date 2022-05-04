@@ -36,6 +36,7 @@
                 android:layout_height="match_parent" />
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
+                android:background="#08F44336"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -57,7 +58,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/dark_background"
+                android:background="@color/colorPrimaryText"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/padding_small_10"
                 android:paddingTop="@dimen/padding_small_10"

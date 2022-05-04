@@ -89,7 +89,7 @@ public class CategoryFragment extends Fragment implements CategoryView {
     public void setMeals(List<Meals.Meal> meals) {
         RecyclerViewMealByCategory adapter =
                 new RecyclerViewMealByCategory(getActivity(), meals);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
         recyclerView.setClipToPadding(false);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

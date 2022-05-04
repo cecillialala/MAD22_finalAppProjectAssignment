@@ -10,16 +10,18 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardCategory"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardBackgroundColor="@color/cardBoxBlack"
                 android:foreground="?attr/selectableItemBackground">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -28,28 +30,27 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/colorPrimary" />
+                        android:background="@drawable/cuttingboardo" />
 
                     <ImageView
                         android:id="@+id/imageCategory"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
-                        android:padding="16dp"
-                        android:scaleType="fitStart"
-                         />
+                        android:padding="@dimen/padding_medium_14"
+                        android:scaleType="centerInside" />
+
                     <TextView
                         android:id="@+id/textCategory"
-                        android:layout_toRightOf="@id/imageCategory"
-                        android:layout_toEndOf="@id/imageCategory"
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:maxLines="7"
+                        android:layout_toEndOf="@id/imageCategory"
+                        android:layout_toRightOf="@id/imageCategory"
                         android:ellipsize="end"
+                        android:maxLines="7"
+                        android:padding="@dimen/padding_medium_14"
+                        android:text="@string/meal_categories"
                         android:textColor="@color/colorWhite"
-                        android:textSize="15sp"
-                        android:text="@string/meal_categories"/>
+                        android:textSize="@dimen/text_medium_16" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -58,8 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardCategory"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+                android:layout_marginLeft="@dimen/padding_small_10"
+                android:layout_marginRight="@dimen/padding_small_10" />
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_below="@id/cardCategory"

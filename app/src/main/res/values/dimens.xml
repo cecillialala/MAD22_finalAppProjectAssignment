@@ -18,9 +18,11 @@
     <dimen name="padding_medium_14">14dp</dimen>
     <dimen name="padding_big_20">20dp</dimen>
     <dimen name="padding_giant_40">40dp</dimen>
-
-
-
+    <dimen name="text_logo">45sp</dimen>
+    <dimen name="text_size_small_14">14sp</dimen>
+    <dimen name="padding_mediumbig_16">16dp</dimen>
+    <dimen name="paddint_mega_ultra_60">60dp</dimen>
+    <dimen name="text_smallest_12">12sp</dimen>
 
 
 </resources>
