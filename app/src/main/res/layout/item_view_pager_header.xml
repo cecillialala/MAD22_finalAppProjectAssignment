@@ -7,22 +7,23 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp"
-
-        app:cardCornerRadius="10dp"
+        android:layout_marginLeft="@dimen/padding_small_10"
+        android:layout_marginTop="@dimen/padding_small_10"
+        android:layout_marginRight="@dimen/padding_small_10"
+        android:layout_marginBottom="@dimen/padding_small_10"
+        app:cardCornerRadius="@dimen/corner_radius"
         app:cardElevation="5dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
 
             android:layout_height="match_parent">
+
             <ImageView
                 android:id="@+id/mealThumb"
                 android:layout_width="match_parent"
-                android:scaleType="centerCrop"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -31,18 +32,19 @@
                 android:scaleType="centerCrop"
 
                 android:src="@drawable/shadow_bottom_to_top" />
+
             <TextView
                 android:id="@+id/mealName"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp"
-                android:paddingBottom="15dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:background="#A6222221"
-                android:layout_alignParentBottom="true"
-                android:text="Meal Name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#A6222221"
+                android:paddingLeft="@dimen/padding_small_10"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp"
+                android:text="Meal Name"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_big_18" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
