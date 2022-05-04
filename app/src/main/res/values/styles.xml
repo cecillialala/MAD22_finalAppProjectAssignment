@@ -20,6 +20,9 @@
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
 
     </style>
+    <style name="TabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+    </style>
 
     <style name="AppBarLayoutTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorControlNormal">@color/colorWhite</item>

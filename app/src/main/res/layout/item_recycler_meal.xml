@@ -3,44 +3,42 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+ android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="3dp"
-
-    android:foreground="?attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true">
-
+    app:cardElevation="5dp">
     <RelativeLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
         <ImageView
             android:id="@+id/mealThumb"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
             android:scaleType="centerCrop"
-            />
+            android:layout_height="match_parent" />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerCrop"
+
+            android:src="@drawable/shadow_bottom_to_top" />
         <TextView
             android:id="@+id/mealName"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:background="#A6222221"
+            android:layout_alignParentBottom="true"
+            android:text="Meal Name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mealThumb"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="12dp"
-            android:ellipsize="end"
-
-            android:gravity="center"
-            android:maxLines="2"
-            android:text="@string/meal_categories"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp" />
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
