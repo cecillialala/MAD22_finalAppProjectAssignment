@@ -39,6 +39,7 @@
     <string name="login_btn">Login</string>
     <string name="Register_btn">Create Account</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="map">MAP</string>
 
 
 </resources>

@@ -25,4 +25,5 @@
     <color name="colorWhiteDark">#DBDBDB</color>
     <color name="colorPrimaryLight">#853f29</color>
     <color name="colorBackground">#F4F7F7</color>
+    <color name="cardBoxBlack">#32322E</color>
 </resources>
