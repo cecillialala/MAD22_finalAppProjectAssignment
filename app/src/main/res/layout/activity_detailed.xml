@@ -6,14 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-
     android:background="@color/dark_background"
     tools:context=".activities.detailsactivity.DetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-
         android:layout_height="250dp"
         android:fitsSystemWindows="true"
         android:theme="@style/AppBarLayoutTheme">
@@ -25,7 +23,6 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:title="@string/dot_loading">
             <ImageView
-
                 android:id="@+id/mealThumb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -39,7 +36,6 @@
                 android:layout_height="match_parent" />
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -47,8 +43,6 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
-
-
     <androidx.core.widget.NestedScrollView
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
@@ -57,19 +51,20 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
                 android:background="@color/dark_background"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp">
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/padding_small_10"
+                android:paddingTop="@dimen/padding_small_10"
+                android:paddingRight="@dimen/padding_small_10">
 
                 <ImageView
-                    android:id="@+id/love"
+                    android:id="@+id/star"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -78,99 +73,110 @@
                     android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"
-                    android:paddingTop="10dp"
+                    android:paddingTop="@dimen/padding_small_10"
                     android:src="@drawable/ic_outline_star"
                     app:tint="@color/colorWhiteDark"
                     tools:ignore="NewApi" />
 
                 <androidx.cardview.widget.CardView
-                    app:cardUseCompatPadding="true"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="@color/dark_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/dark_background"
+                    app:cardCornerRadius="@dimen/corner_radius"
+                    app:cardUseCompatPadding="true">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/textCategory"
-                            android:text="@string/category"
-                            android:paddingLeft="14dp"
-                            android:paddingRight="14dp"
-                            android:paddingTop="14dp"
-                            android:textColor="@color/dark_light_header"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_medium_14"
+                            android:paddingTop="@dimen/padding_medium_14"
+                            android:paddingRight="@dimen/padding_medium_14"
+                            android:text="@string/category"
+                            android:textColor="@color/dark_light_header"
+                            android:textSize="@dimen/text_medium_16" />
+
                         <TextView
                             android:id="@+id/category"
-                            android:text="@string/dot_loading"
-                            android:paddingLeft="14dp"
-                            android:paddingRight="14dp"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="14dp"
-                            android:textSize="16sp"
-                            android:textColor="@color/light_undertitle_text"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/padding_medium_14"
+                            android:paddingTop="5dp"
+                            android:paddingRight="@dimen/padding_medium_14"
+                            android:paddingBottom="@dimen/padding_medium_14"
+                            android:text="@string/dot_loading"
+                            android:textColor="@color/light_undertitle_text"
+                            android:textSize="@dimen/text_medium_16" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
-                    app:cardUseCompatPadding="true"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="@color/dark_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/dark_background"
+                    app:cardCornerRadius="@dimen/corner_radius"
+                    app:cardUseCompatPadding="true">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/Country"
-                            android:text="@string/country"
-                            android:paddingLeft="14dp"
-
-                            android:paddingRight="14dp"
-                            android:paddingTop="14dp"
-                            android:textColor="@color/dark_light_header"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+
+                            android:paddingLeft="@dimen/padding_medium_14"
+                            android:paddingTop="@dimen/padding_medium_14"
+                            android:paddingRight="@dimen/padding_medium_14"
+                            android:text="@string/country"
+                            android:textColor="@color/dark_light_header"
+                            android:textSize="@dimen/text_medium_16" />
+
                         <TextView
                             android:id="@+id/country"
-                            android:text="@string/dot_loading"
-                            android:paddingLeft="14dp"
-
-                            android:paddingRight="14dp"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="14dp"
-                            android:textSize="16sp"
-                            android:textColor="@color/light_undertitle_text"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+
+                            android:paddingLeft="@dimen/padding_medium_14"
+                            android:paddingTop="5dp"
+                            android:paddingRight="@dimen/padding_medium_14"
+                            android:paddingBottom="@dimen/padding_medium_14"
+                            android:text="@string/dot_loading"
+                            android:textColor="@color/light_undertitle_text"
+                            android:textSize="@dimen/text_medium_16" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-            <TextView
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:layout_marginTop="14dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="@string/Ingredients"
-                android:textColor="@color/light_undertitle_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
-            <androidx.cardview.widget.CardView
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="10dp"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#32322E"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginTop="@dimen/padding_medium_14"
+                android:paddingLeft="@dimen/padding_medium_14"
+                android:paddingRight="@dimen/padding_medium_14"
+                android:text="@string/Ingredients"
+                android:textColor="@color/light_undertitle_text"
+                android:textSize="@dimen/text_big_18"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_small_10"
+                android:layout_marginRight="@dimen/padding_small_10"
+                app:cardBackgroundColor="@color/cardBoxBlack"
+                app:cardCornerRadius="@dimen/corner_radius"
+                app:cardUseCompatPadding="true">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -178,140 +184,146 @@
 
 
                     <LinearLayout
-                        android:layout_marginBottom="20dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_giant_40"
+                        android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/ingredient"
-                                android:paddingLeft="14dp"
-                                android:paddingRight="14dp"
-
-                                android:textSize="16sp"
-                                android:textColor="@color/colorWhiteDark"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+
+                                android:paddingLeft="@dimen/padding_medium_14"
+                                android:paddingRight="@dimen/padding_medium_14"
+                                android:textColor="@color/colorWhiteDark"
+                                android:textSize="@dimen/text_medium_16" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/measure"
-                                android:paddingLeft="14dp"
-                                android:paddingRight="14dp"
-
-                                android:textSize="16sp"
-                                android:textColor="@color/colorWhiteDark"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+
+                                android:paddingLeft="@dimen/padding_medium_14"
+                                android:paddingRight="@dimen/padding_medium_14"
+                                android:textColor="@color/colorWhiteDark"
+                                android:textSize="@dimen/text_medium_16" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="@string/instructions"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="@dimen/padding_medium_14"
+                android:layout_marginTop="@dimen/padding_medium_14"
+                android:layout_marginRight="@dimen/padding_medium_14"
 
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/light_undertitle_text"
+                android:drawablePadding="@dimen/padding_small_10"
                 android:gravity="center_vertical"
-                android:drawablePadding="10dp" />
+                android:text="@string/instructions"
+                android:textColor="@color/light_undertitle_text"
+                android:textSize="@dimen/text_big_18"
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#32322E"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginLeft="@dimen/padding_small_10"
+                android:layout_marginRight="@dimen/padding_small_10"
+                app:cardBackgroundColor="@color/cardBoxBlack"
+                app:cardCornerRadius="@dimen/corner_radius"
+                app:cardUseCompatPadding="true">
 
                 <TextView
                     android:id="@+id/instructions"
-                    android:text="@string/dot_loading"
-                    android:paddingLeft="14dp"
-                    android:paddingRight="14dp"
-
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorWhiteDark"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_medium_14"
+
+                    android:paddingTop="@dimen/padding_medium_14"
+                    android:paddingRight="@dimen/padding_medium_14"
+                    android:paddingBottom="@dimen/padding_medium_14"
+                    android:text="@string/dot_loading"
+                    android:textColor="@color/colorWhiteDark"
+                    android:textSize="@dimen/text_medium_16" />
             </androidx.cardview.widget.CardView>
 
 
-
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginTop="@dimen/padding_small_10"
+                android:layout_marginBottom="@dimen/padding_big_20"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/padding_giant_40">
+
                 <androidx.cardview.widget.CardView
-                    android:layout_weight="1"
-                    app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/dark_light_header"
-                    app:cardElevation="0dp"
-                    app:cardCornerRadius="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="@dimen/padding_small_10"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/dark_light_header"
+                    app:cardCornerRadius="@dimen/corner_radius"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true">
+
                     <TextView
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:textStyle="bold"
                         android:id="@+id/youtube"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/youtube"
-                        android:padding="14dp"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorWhiteDark"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawablePadding="@dimen/padding_small_10"
+                        android:focusable="true"
                         android:gravity="center"
-                        android:drawablePadding="10dp"
-                        />
+                        android:padding="@dimen/padding_medium_14"
+                        android:text="@string/youtube"
+                        android:textColor="@color/colorWhiteDark"
+                        android:textSize="@dimen/text_medium_16"
+                        android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
-                    android:layout_weight="1"
-                    app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/light_undertitle_text"
-                    app:cardElevation="0dp"
-                    app:cardCornerRadius="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/padding_small_10"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/light_undertitle_text"
+                    app:cardCornerRadius="@dimen/corner_radius"
+                    app:cardElevation="0dp"
 
-                    android:layout_marginRight="10dp">
+                    app:cardUseCompatPadding="true">
+
                     <TextView
                         android:id="@+id/source"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:textStyle="bold"
-                        android:background="?attr/selectableItemBackground"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="MAP"
-                        android:padding="14dp"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorWhiteDark"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawablePadding="@dimen/padding_small_10"
+                        android:focusable="true"
                         android:gravity="center"
-                        android:drawablePadding="10dp"
-                      />
+                        android:padding="@dimen/padding_medium_14"
+                        android:text="@string/map"
+                        android:textColor="@color/colorWhiteDark"
+                        android:textSize="@dimen/text_medium_16"
+                        android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>

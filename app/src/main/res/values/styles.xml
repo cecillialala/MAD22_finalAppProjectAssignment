@@ -22,8 +22,8 @@
     </style>
 
     <style name="AppBarLayoutTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="colorControlNormal">@color/colorPrimary</item>
-        <item name="titleTextColor">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="titleTextColor">@color/black</item>
 
     </style>
 
