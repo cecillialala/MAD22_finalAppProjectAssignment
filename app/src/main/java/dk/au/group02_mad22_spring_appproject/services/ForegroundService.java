@@ -159,7 +159,7 @@ private List<Meals.Meal> foodlist;
                 .setSmallIcon(R.drawable.ic_baseline_restaurant_24)
                 .build();
         Log.d(TAG, "createNotification33: "+ randomMeal.getStrMeal());
-        startForeground(1, notification);
+        startForeground(NOTIFICATION_ID, notification);
         //stopSelf();
     }
 
