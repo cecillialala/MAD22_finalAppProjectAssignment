@@ -29,7 +29,7 @@
         android:paddingTop="8dp"
         android:text="@string/app_name2"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18dp" />
 
     <TextView
