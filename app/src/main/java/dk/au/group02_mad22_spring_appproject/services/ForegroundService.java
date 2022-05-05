@@ -145,22 +145,27 @@ private List<Meals.Meal> foodlist;
     public void createNotification() {
 
         List<Meals.Meal> tempList = repository.getAllMeals();
-        Log.d(TAG, "createNotification: "+ tempList);
-        ArrayList<Meals.Meal> suggestMeal = new ArrayList<>(tempList);
-        Log.d(TAG, "createNotification2222: "+ suggestMeal);
-        Random rand = new Random();
-        int n = rand.nextInt(suggestMeal.size());
+        if(!tempList.isEmpty()){
+            Log.d(TAG, "createNotification: "+ tempList);
+            ArrayList<Meals.Meal> suggestMeal = new ArrayList<>(tempList);
+            Log.d(TAG, "createNotification2222: "+ suggestMeal);
+            Random rand = new Random();
+            int n = rand.nextInt(suggestMeal.size());
 
-        Meals.Meal randomMeal = suggestMeal.get(n);
-        Log.d(TAG, "createNotification33: "+ randomMeal);
-        Notification notification = new NotificationCompat.Builder(ForegroundService.this, CHANNEL_ID)
-                .setContentTitle("Get Fat")
-                .setContentText(getString(R.string.suggestion)+randomMeal.getStrMeal()+"?")
-                .setSmallIcon(R.drawable.ic_baseline_restaurant_24)
-                .build();
-        Log.d(TAG, "createNotification33: "+ randomMeal.getStrMeal());
-        startForeground(NOTIFICATION_ID, notification);
-        //stopSelf();
+            Meals.Meal randomMeal = suggestMeal.get(n);
+            Log.d(TAG, "createNotification33: "+ randomMeal);
+            Notification notification = new NotificationCompat.Builder(ForegroundService.this, CHANNEL_ID)
+                    .setContentTitle("Get Fat")
+                    .setContentText(getString(R.string.suggestion)+randomMeal.getStrMeal()+"?")
+                    .setSmallIcon(R.drawable.ic_baseline_restaurant_24)
+                    .build();
+            Log.d(TAG, "createNotification33: "+ randomMeal.getStrMeal());
+            startForeground(NOTIFICATION_ID, notification);
+            //stopSelf();
+        }else{
+            Log.d(TAG, "Add Recipe to your favourite list: ");
+              }
+
     }
 
     //https://www.youtube.com/watch?v=tTbd1Mfi-Sk
