@@ -102,7 +102,7 @@ private List<Meals.Meal> foodlist;
                 count++;    //increment counter
                 Log.d(TAG, "Count: " + count);
                 try {
-                    Thread.sleep(600000);
+                    Thread.sleep(60000);
                     createNotification();
 
                     Log.d(TAG, "run: Food er opdateret");
@@ -179,7 +179,7 @@ private List<Meals.Meal> foodlist;
             while (true)
             {
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(60000);
                     createNotification();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
