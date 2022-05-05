@@ -164,6 +164,13 @@ private List<Meals.Meal> foodlist;
             //stopSelf();
         }else{
             Log.d(TAG, "Add Recipe to your favourite list: ");
+            Notification notification = new NotificationCompat.Builder(ForegroundService.this, CHANNEL_ID)
+                    .setContentTitle("Get Fat")
+                    .setContentText(" Add Recipe to your favourite list:")
+                    .setSmallIcon(R.drawable.ic_baseline_restaurant_24)
+                    .build();
+
+            startForeground(NOTIFICATION_ID, notification);
               }
 
     }
