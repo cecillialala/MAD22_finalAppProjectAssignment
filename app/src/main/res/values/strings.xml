@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">Group02_MAD22_Spring_AppProject</string>
-    <string name="app_name2">Get Fat</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
+    <string name="app_name2" translatable="false">Get Fat</string>
+    <string name="title_activity_login" translatable="false">LoginActivity</string>
+    <string name="prompt_email" translatable="false">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">Welcome!</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="search_bar_hint">Search for your favourite meal!</string>
     <string name="categories">"Categories"</string>
-    <string name="menu">"Menu"</string>
-    <string name="menu_bon_apetit">"Bon Apetit!"</string>
-    <string name="get_fat">"Get Fat"</string>
-    <string name="main_button_exit">Exit</string>
+    <string name="menu" translatable="false">"Menu"</string>
+    <string name="menu_bon_apetit" translatable="false">"Bon Apetit!"</string>
+    <string name="get_fat" translatable="false">"Get Fat"</string>
+    <string name="main_button_exit" translatable="false">Exit</string>
     <string name="main_button_search">Search</string>
     <string name="meal_categories">meal_categories</string>
     <string name="search_your_recipes">Search Your Recipes…</string>
@@ -23,12 +23,12 @@
     <string name="category">Category</string>
     <string name="country">Country</string>
     <string name="instructions">INSTRUCTIONS</string>
-    <string name="dot_loading">...</string>
+    <string name="dot_loading" translatable="false">...</string>
     <string name="md_menu">Menu Overview</string>
     <string name="md_map">Map</string>
     <string name="md_fav">Favorites</string>
     <string name="Ingredients">INGREDIENTS</string>
-    <string name="youtube">YOUTUBE</string>
+    <string name="youtube" translatable="false">YOUTUBE</string>
     <string name="source">SOURCE</string>
     <string name="favorite">Favorite</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
@@ -36,11 +36,21 @@
     <string name="suggestion">"Are you craving for "</string>
 
 
-    <string name="Login">Login_btn</string>
+    <string name="Login" translatable="false">Login_btn</string>
     <string name="login_btn">Login</string>
     <string name="Register_btn">Create Account</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="main_button_back">BACK</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="map">MAP</string>
+    <string name="login_and_see">Login and see your favorite meals!</string>
+    <string name="new_here">New Here ?  Create Account</string>
+    <string name="hint_email" translatable="false">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="create_and_eat">Create a free account and get eating!</string>
+    <string name="by_agreeing_part_1">By registering you agree to Get Fats</string>
+    <string name="by_agreeing_part_2">Terms and Services and Privacy Policy</string>
 
 
 </resources>

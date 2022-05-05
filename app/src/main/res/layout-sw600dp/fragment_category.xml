@@ -18,16 +18,20 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardCategory"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="200dp"
+                android:paddingVertical="150dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="10dp"
+
                 app:cardBackgroundColor="@color/cardBoxBlack"
                 android:foreground="?attr/selectableItemBackground">
                 <RelativeLayout
+                    android:paddingHorizontal="150dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/cuttingboardo" />
@@ -46,7 +50,7 @@
                         android:layout_toEndOf="@id/imageCategory"
                         android:layout_toRightOf="@id/imageCategory"
                         android:ellipsize="end"
-                        android:maxLines="7"
+                        android:maxLines="12"
                         android:padding="@dimen/padding_medium_14"
                         android:text="@string/meal_categories"
                         android:textColor="@color/colorWhite"
@@ -56,6 +60,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
+                android:paddingHorizontal="150dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardCategory"

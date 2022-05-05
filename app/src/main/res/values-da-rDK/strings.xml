@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Group02_MAD22_Spring_AppProject</string>
+    <string name="prompt_password">Kodeord</string>
+    <string name="action_sign_in">Log ind eller registrer</string>
+    <string name="action_sign_in_short">Log ind</string>
+    <string name="welcome">Velkommen!</string>
+    <string name="invalid_username">Ikke et gyldigt brugernavn</string>
+    <string name="invalid_password">Kodeord skal være  >5 karakter</string>
+    <string name="login_failed">Login fejlede</string>
+    <string name="categories">Kategorier</string>
+    <string name="main_button_search">Søg</string>
+    <string name="meal_categories">Mad Kategorier</string>
+    <string name="search_your_recipes">Søg på dine opskrifter</string>
+    <string name="category">Kategori</string>
+    <string name="country">Oprindelsesland</string>
+    <string name="instructions">INSTRUKTIONER</string>
+    <string name="md_menu">Menu oversigt</string>
+    <string name="md_map">Kort</string>
+    <string name="md_fav">Favoriter</string>
+    <string name="Ingredients">INGREDIENSER</string>
+    <string name="source">KILDE</string>
+    <string name="favorite">Favorit</string>
+    <string name="navigation_drawer_open">Åben navigationsskuffen</string>
+    <string name="navigation_drawer_close">Luk navigationsskuffen</string>
+    <string name="suggestion">Trænger du til</string>
+    <string name="login_btn" translatable="false">Log ind</string>
+    <string name="Register_btn">Opret nu bruger</string>
+    <string name="map">KORT</string>
+    <string name="login_and_see">Log ind og se dine favorit madretter!</string>
+    <string name="new_here">Er du ny? Opret en bruger</string>
+    <string name="hint_password">Kodeord</string>
+    <string name="hint_name">Navn</string>
+    <string name="create_and_eat">Opret en gratis bruger og begynd ædegilden</string>
+    <string name="by_agreeing_part_1">Ved at registrere erklære du dig enig i Get Fats</string>
+    <string name="by_agreeing_part_2">Brugervilkår og Privat Politik</string>
+</resources>

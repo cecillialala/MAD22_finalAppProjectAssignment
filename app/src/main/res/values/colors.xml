@@ -16,7 +16,7 @@
     <color name="dark_light_header">#e05840</color>
     <color name="colorPrimary">#542313</color>
 
-    <color name="colorPrimaryDark">#542313</color>
+    <color name="colorPrimaryDark">#e05840</color>
     <color name="colorAccent">#872303</color>
     <color name="colorNull">#00000000</color>
     <color name="colorIcons">#7C7F81</color>
@@ -25,4 +25,5 @@
     <color name="colorWhiteDark">#DBDBDB</color>
     <color name="colorPrimaryLight">#853f29</color>
     <color name="colorBackground">#F4F7F7</color>
+    <color name="cardBoxBlack">#32322E</color>
 </resources>

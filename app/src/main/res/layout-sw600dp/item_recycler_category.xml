@@ -3,7 +3,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:layout_margin="5dp"
     android:clickable="true"
     android:focusable="true"
@@ -21,7 +21,7 @@
         <ImageView
             android:id="@+id/categoryThumb"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
 
             android:padding="5dp"
             android:scaleType="centerCrop" />
@@ -29,7 +29,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:background="#7A222221"
             android:padding="5dp"
             android:scaleType="centerCrop" />
@@ -46,7 +46,7 @@
             android:gravity="center"
             android:text="Category"
             android:textColor="@color/colorWhiteDark"
-            android:textSize="22sp"
+            android:textSize="@dimen/text_tablet_medium"
             android:textStyle="bold" />
     </RelativeLayout>
 

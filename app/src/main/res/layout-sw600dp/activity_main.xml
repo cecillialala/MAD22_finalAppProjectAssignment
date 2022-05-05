@@ -83,6 +83,7 @@
                     android:paddingTop="@dimen/padding_small_10"
                     android:text="Logout"
                     android:textColor="@color/dark_light_header"
+                    android:textSize="@dimen/text_tablet_medium"
                     android:textStyle="bold" />
 
                 <androidx.cardview.widget.CardView
@@ -101,7 +102,7 @@
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewPagerHeader"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="200dp"
                     android:layout_below="@+id/cardSearch"
 
                     android:layout_marginTop="@dimen/padding_small_10"
@@ -124,7 +125,7 @@
                     android:paddingTop="@dimen/padding_small_10"
                     android:text="@string/meal_categories"
                     android:textColor="@color/colorWhiteDark"
-                    android:textSize="@dimen/text_big_18"
+                    android:textSize="@dimen/text_logo"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -50,6 +51,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
         //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
 // TODO her
        //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
+        Picasso.get().load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
     }
 
     @Override
