@@ -38,10 +38,10 @@ private List<Meals.Meal> foodlist;
     public void onCreate() {
         super.onCreate();
 
-        createNotificationChannel();
-        new LongOperation().execute();
+        //createNotificationChannel();
+       // new LongOperation().execute();
 
-        repository = Repository.getInstance(getApplication());
+       // repository = Repository.getInstance(getApplication());
         //repository.getAllMeals().observe(this, new Observer<Meals>() )
 
 /*        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "production")
