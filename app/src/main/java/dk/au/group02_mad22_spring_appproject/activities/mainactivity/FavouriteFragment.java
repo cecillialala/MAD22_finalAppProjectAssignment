@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +24,7 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 public class FavouriteFragment extends FragmentActivity implements FavouriteAdapter.OnItemClickListener{
     FavouriteAdapter adapter;
-    private List<Meals.Meal> listOfMeals;
+    private LiveData<List<Meals.Meal>> listOfMeals;
 
     AppDatabase db;
 // TODO Lav den om til LiveData
@@ -40,7 +41,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
 
 
         MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
-        List<Meals.Meal> list= vm.getFoodObject();
+        LiveData<List<Meals.Meal>> list= vm.getFoodObject();
         listOfMeals = list;
         adapter = new FavouriteAdapter(list);
         mealsRecyclerView.setAdapter(adapter);
@@ -53,7 +54,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     public void onItemClick(int position) {
         TextView mealName = findViewById(R.id.fave_meal_name);
         Intent detailIntent = new Intent(this, DetailActivity.class);
-        Meals.Meal meal = listOfMeals.get(position);
+        Meals.Meal meal = listOfMeals.getValue().get(position);
 
         detailIntent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
         detailIntent.putExtra("meal", meal);

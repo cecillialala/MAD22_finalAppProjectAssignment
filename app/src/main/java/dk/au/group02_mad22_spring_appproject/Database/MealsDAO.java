@@ -1,5 +1,6 @@
 package dk.au.group02_mad22_spring_appproject.Database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -17,6 +18,9 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 public interface MealsDAO {
     @Query("SELECT * FROM mealsTable")
     public List<Meals.Meal> getAllMeals();
+
+    @Query("SELECT * FROM mealsTable")
+    public LiveData<List<Meals.Meal>> getAllMealsLive();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insertAllMeals(Meals.Meal m);

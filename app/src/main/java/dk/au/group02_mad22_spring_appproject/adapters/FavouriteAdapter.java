@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,14 +22,14 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 //Course Lesson ADAPTERS MAD
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
 
-    List<Meals.Meal> meals;
+    LiveData<List<Meals.Meal>> meals;
     private OnItemClickListener mListener;
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
 
-    public FavouriteAdapter(List<Meals.Meal> meals) {
+    public FavouriteAdapter(LiveData<List<Meals.Meal>> meals) {
         this.meals = meals;
 
     }
@@ -47,16 +48,16 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull FavouriteAdapter.ViewHolder holder, int position) {
-        holder.faveMealName.setText(meals.get(position).getStrMeal());
+        holder.faveMealName.setText(meals.getValue().get(position).getStrMeal());
         //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
 // TODO her
        //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
-        Picasso.get().load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
+        Picasso.get().load(meals.getValue().get(position).getStrMealThumb()).into(holder.faveMealImage);
     }
 
     @Override
     public int getItemCount() {
-        return meals.size();
+        return meals.getValue().size();
     }
 
     /* https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder */

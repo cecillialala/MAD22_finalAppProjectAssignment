@@ -7,6 +7,7 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,15 +29,14 @@ public class Repository extends AppCompatActivity {
     private final AppDatabase db;
     private final Context context;
     private static Repository repository;
-    private List<Meals.Meal> FoodlistLive ;
+    private LiveData<List<Meals.Meal>> FoodlistLive ;
 
 
 
     public Repository(Application app){
         this.context=app;
         db=AppDatabase.getAppDatabase(context.getApplicationContext());
-        FoodlistLive= db.mealsDao().getAllMeals();
-
+        FoodlistLive= db.mealsDao().getAllMealsLive();
     }
     public static Repository getInstance(final Application application) {
         if (repository == null) {
@@ -50,7 +50,10 @@ public class Repository extends AppCompatActivity {
 
     public List<Meals.Meal> getAllMeals(){
         return db.mealsDao().getAllMeals();
+    }
 
+    public LiveData<List<Meals.Meal>> getAllMealsLive(){
+        return db.mealsDao().getAllMealsLive();
     }
 
     public void insertAllMeals(Meals.Meal m){
