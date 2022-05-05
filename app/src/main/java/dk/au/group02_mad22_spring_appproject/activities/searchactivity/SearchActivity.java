@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,8 +20,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
+import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouriteFragment;
 import dk.au.group02_mad22_spring_appproject.adapters.RecyclerViewMealByCategory;
 import dk.au.group02_mad22_spring_appproject.adapters.SearchRecyclerViewAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
@@ -87,6 +92,34 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
     @Override
     public void hideLoading() {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.drawer_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        //noinspection SimplifiableIfStatement
+        switch (item.getItemId()) {
+            case R.id.nav_map:
+                startActivity(new Intent(this, MapFragment.class));
+                break;
+            case R.id.nav_favourite:
+                startActivity(new Intent(this, FavouriteFragment.class));
+                break;
+            case android.R.id.home :
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

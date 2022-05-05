@@ -24,7 +24,6 @@
     <string name="navigation_drawer_open">Åben navigationsskuffen</string>
     <string name="navigation_drawer_close">Luk navigationsskuffen</string>
     <string name="suggestion">Trænger du til</string>
-    <string name="login_btn" translatable="false">Log ind</string>
     <string name="Register_btn">Opret nu bruger</string>
     <string name="map">KORT</string>
     <string name="login_and_see">Log ind og se dine favorit madretter!</string>
@@ -34,4 +33,6 @@
     <string name="create_and_eat">Opret en gratis bruger og begynd ædegilden</string>
     <string name="by_agreeing_part_1">Ved at registrere erklære du dig enig i Get Fats</string>
     <string name="by_agreeing_part_2">Brugervilkår og Privat Politik</string>
+    <string name="main_button_back">TILBAGE</string>
+    <string name="search_bar_hint">Søg efter din favorit ret!</string>
 </resources>
