@@ -4,6 +4,7 @@ import static dk.au.group02_mad22_spring_appproject.activities.mainactivity.Main
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
@@ -26,6 +27,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     FavouriteAdapter adapter;
     private LiveData<List<Meals.Meal>> listOfMeals;
 
+    Button backButton;
     AppDatabase db;
 // TODO Lav den om til LiveData
 
@@ -33,6 +35,9 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_favourite);
+
+        this.backButton = findViewById(R.id.btn_back);
+        this.backButton.setOnClickListener(view -> onBackPressed());
 
         final RecyclerView mealsRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mealsRecyclerView.setLayoutManager(new LinearLayoutManager(this));

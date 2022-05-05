@@ -6,16 +6,41 @@
         <entry key="..\:/Users/bal11/AndroidStudioProjects/Group02_MAD22_Spring_AppProject2/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/bal11/AndroidStudioProjects/Group02_MAD22_Spring_AppProject2/app/src/main/res/layout/activity_main.xml" value="0.254981884057971" />
         <entry key="..\:/Users/bal11/AndroidStudioProjects/Group02_MAD22_Spring_AppProject2/app/src/main/res/layout/activity_main_recyclerview.xml" value="0.25" />
-        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main.xml" value="0.1762917933130699" />
-        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_register.xml" value="0.2296195652173913" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/go_back.xml" value="0.16" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_baseline_crop_square_24.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_outline_star.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/activity_category.xml" value="0.16086065573770492" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/activity_detailed.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/fragment_category.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/fragment_favourite.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/item_recycler_category.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/item_recycler_category_shimmer.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/item_recycler_meal.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/item_view_pager_header.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/item_view_pager_header_shimmer.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout-sw600dp/nav_header.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_category.xml" value="0.21331521739130435" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_detailed.xml" value="0.27808988764044945" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_maps.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_category.xml" value="0.2296195652173913" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_favourite.xml" value="0.3779310344827586" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/fragment_map.xml" value="0.2296195652173913" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_category.xml" value="0.2296195652173913" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_category_shimmer.xml" value="0.2296195652173913" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_recycler_meal.xml" value="0.2296195652173913" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_view_pager_header.xml" value="0.2296195652173913" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/item_view_pager_header_shimmer.xml" value="0.1" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/meal_row.xml" value="0.25" />
         <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/layout/nav_header.xml" value="0.33" />
+        <entry key="..\:/Users/bal11/OneDrive/Dokumenter/GitHub/MAD22_finalAppProjectAssignment/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_baseline_restaurant_24.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_circle.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/drawable/ic_favorite_border.xml" value="0.1" />
@@ -35,7 +60,7 @@
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_login2.xml" value="0.15185185185185185" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_main_recyclerview.xml" value="0.1" />
-        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_register.xml" value="0.23423423423423423" />
+        <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_register.xml" value="0.15677083333333333" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/activity_search.xml" value="0.20208333333333334" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/category_fragment.xml" value="0.1" />
         <entry key="..\:/un/6-semster/MAD/App_Project/MAD22_finalAppProjectAssignment/app/src/main/res/layout/category_recyclerview.xml" value="0.1" />
@@ -56,7 +81,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

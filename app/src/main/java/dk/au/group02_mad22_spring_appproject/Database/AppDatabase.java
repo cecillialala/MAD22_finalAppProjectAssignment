@@ -14,7 +14,6 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 @Database(entities = {Meals.Meal.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
-
     public abstract MealsDAO mealsDao();
 
     public static AppDatabase getAppDatabase(Context context) {
@@ -28,7 +27,5 @@ public abstract class AppDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    public static void destroyInstance() {
-        INSTANCE = null;
-    }
+
 }
