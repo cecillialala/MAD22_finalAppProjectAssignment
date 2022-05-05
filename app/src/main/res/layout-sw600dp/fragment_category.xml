@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.category.CategoryActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCategory"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingVertical="150dp"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="10dp"
+
+                app:cardBackgroundColor="@color/cardBoxBlack"
+                android:foreground="?attr/selectableItemBackground">
+                <RelativeLayout
+                    android:paddingHorizontal="150dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cuttingboardo" />
+
+                    <ImageView
+                        android:id="@+id/imageCategory"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:padding="@dimen/padding_medium_14"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:id="@+id/textCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/imageCategory"
+                        android:layout_toRightOf="@id/imageCategory"
+                        android:ellipsize="end"
+                        android:maxLines="12"
+                        android:padding="@dimen/padding_medium_14"
+                        android:text="@string/meal_categories"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_medium_16" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:paddingHorizontal="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardCategory"
+                android:layout_marginLeft="@dimen/padding_small_10"
+                android:layout_marginRight="@dimen/padding_small_10" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_below="@id/cardCategory"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    
+</FrameLayout>
