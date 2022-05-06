@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
@@ -12,16 +13,16 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 
 public class DetailsViewModel extends AndroidViewModel {
     private Repository repository;
-    private List<Meals.Meal> FoodObject;
+    private LiveData<List<Meals.Meal>> FoodObject;
 
     public DetailsViewModel(@NonNull Application application) {
         super(application);
         repository=Repository.getInstance(application);
-        FoodObject= repository.getAllMeals();
+        FoodObject= repository.getAllMealsLive();
     }
 
-    public List<Meals.Meal> getFoodObject() {
-        return repository.getAllMeals();
+    public LiveData<List<Meals.Meal>> getFoodObject() {
+        return repository.getAllMealsLive();
     }
     public void addMeals(Meals.Meal MealsName){
         repository.insertAllMeals(MealsName);

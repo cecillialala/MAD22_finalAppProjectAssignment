@@ -17,19 +17,19 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 @Dao
 public interface MealsDAO {
     @Query("SELECT * FROM mealsTable")
-    public List<Meals.Meal> getAllMeals();
+    List<Meals.Meal> getAllMeals();
 
     @Query("SELECT * FROM mealsTable")
-    public LiveData<List<Meals.Meal>> getAllMealsLive();
+    LiveData<List<Meals.Meal>> getAllMealsLive();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertAllMeals(Meals.Meal m);
+    void insertAllMeals(Meals.Meal m);
 
     @Update
-    public void updateMeals(List<Meals.Meal> meals);
+    void updateMeals(List<Meals.Meal> meals);
 
     @Delete
-    public void delete(Meals.Meal m);
+    void delete(Meals.Meal m);
 
     @Query("SELECT * FROM mealsTable where favourite LIKE :status")
     List<Meals.Meal> getFavouriteMeals(Integer status);

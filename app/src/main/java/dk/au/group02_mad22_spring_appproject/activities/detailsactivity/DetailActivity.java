@@ -4,6 +4,7 @@ import static dk.au.group02_mad22_spring_appproject.activities.mainactivity.Main
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -86,12 +87,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         Repository.DetailPresenter presenter = new Repository.DetailPresenter(this);
         presenter.getMealById(mealName);
         vm = new ViewModelProvider(this).get(DetailsViewModel.class);
-        List<Meals.Meal> list= vm.getFoodObject();
+        LiveData<List<Meals.Meal>> list= vm.getFoodObject();
         tvCategory.setText(tempMeal.getStrCategory());
 
         Log.d(TAG, "Adding visual feedback for if meal is in favorites");
-        if(list.size() != 0) {
-            for(Meals.Meal m : list) {
+        if(list.getValue() != null) {
+            for(Meals.Meal m : list.getValue()) {
                 if(m.getStrMeal().equals(mealName)) {
                     ivStar.setImageResource(R.drawable.ic_filled_star);
                     return;
@@ -292,9 +293,9 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
 
         //Adding to fave
         ivStar.setOnClickListener(v -> {
-            List<Meals.Meal> list= vm.getFoodObject();
-            if(list.size() != 0) {
-                for(Meals.Meal m : list) {
+            LiveData<List<Meals.Meal>> list= vm.getFoodObject();
+            if(list.getValue() != null) {
+                for(Meals.Meal m : list.getValue()) {
                     if(m.getIdMeal().equals(tempMeal.getIdMeal())) {
                         vm.delete(m);
                         ivStar.setImageResource(R.drawable.ic_outline_star);

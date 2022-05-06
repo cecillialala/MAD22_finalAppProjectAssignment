@@ -22,14 +22,15 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 //Course Lesson ADAPTERS MAD
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
 
-    LiveData<List<Meals.Meal>> meals;
+    List<Meals.Meal> meals;
     private OnItemClickListener mListener;
+    private static FavouriteAdapter.ClickListener clickListener;
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
 
-    public FavouriteAdapter(LiveData<List<Meals.Meal>> meals) {
+    public FavouriteAdapter(List<Meals.Meal> meals) {
         this.meals = meals;
 
     }
@@ -48,20 +49,23 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull FavouriteAdapter.ViewHolder holder, int position) {
-        holder.faveMealName.setText(meals.getValue().get(position).getStrMeal());
+        holder.faveMealName.setText(meals.get(position).getStrMeal());
         //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
 // TODO her
        //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
-        Picasso.get().load(meals.getValue().get(position).getStrMealThumb()).into(holder.faveMealImage);
+        Picasso.get().load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
     }
 
     @Override
     public int getItemCount() {
-        return meals.getValue().size();
+        if (meals == null){
+            return 0;
+        }
+        return meals.size();
     }
 
     /* https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder */
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView faveMealName;
         public ImageView faveMealImage;
         public ViewHolder(View itemView) {
@@ -69,17 +73,25 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
             faveMealName = (TextView) itemView.findViewById(R.id.fave_meal_name);
             faveMealImage = (ImageView) itemView.findViewById(R.id.fave_meal_img);
 
-            itemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mListener != null) {
-                        int position = getAdapterPosition();
-                        if(position != RecyclerView.NO_POSITION) {
-                            mListener.onItemClick(position);
-                        }
-                    }
-                }
-            });
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            clickListener.onClick(view, getAdapterPosition());
+        }
+    }
+
+    public void updateMealsList(List<Meals.Meal> _mealsList){
+        meals = _mealsList;
+        notifyDataSetChanged();
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        FavouriteAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onClick(View view, int position);
     }
 }
