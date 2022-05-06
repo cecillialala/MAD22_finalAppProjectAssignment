@@ -114,11 +114,28 @@
                     android:id="@+id/shimmerMeal"
                     layout="@layout/item_view_pager_header_shimmer" />
 
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/viewPagerHeader"
+                    android:layout_marginHorizontal="140dp"
+                    android:layout_marginTop="@dimen/padding_giant_40"
+                    android:layout_marginBottom="@dimen/padding_mediumbig_16"
+                    android:background="@drawable/round_corner_button"
+                    android:backgroundTint="@color/dark_light_header"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/search_button"
+                    android:textColor="@color/colorWhiteDark"
+                    android:textSize="@dimen/text_tablet_medium"
+                    android:textStyle="bold"></Button>
+
+
                 <TextView
                     android:id="@+id/titleCategory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/viewPagerHeader"
+                    android:layout_below="@+id/btn_search"
                     android:layout_marginLeft="@dimen/padding_mediumbig_16"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="@dimen/padding_mediumbig_16"
