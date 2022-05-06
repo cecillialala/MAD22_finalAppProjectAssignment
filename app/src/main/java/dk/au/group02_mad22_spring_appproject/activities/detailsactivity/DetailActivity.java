@@ -39,7 +39,7 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 public class DetailActivity extends AppCompatActivity implements DetailView {
     private static final String TAG = "DetailActivity";
     private DetailsViewModel vm;
-    private TextView tvCategory, tvCountry, tvInstructions, tvIngredients, tvMeasures, tvYoutube, tvSource;
+    private TextView tvCategory, tvCountry, tvInstructions, tvIngredients, tvMeasures, tvYoutube, tvMap;
     private ImageView ivThumb, ivStar;
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -71,7 +71,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         tvIngredients = findViewById(R.id.ingredient);
         tvMeasures = findViewById(R.id.measure);
         tvYoutube = findViewById(R.id.youtube);
-        tvSource = findViewById(R.id.source);
+        tvMap = findViewById(R.id.source);
         ivStar = findViewById(R.id.star);
 
     }
@@ -284,10 +284,9 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
             startActivity(intentYoutube);
         });
 
-        tvSource.setOnClickListener(v -> {
-            Intent intentSource = new Intent(Intent.ACTION_VIEW);
-            intentSource.setData(Uri.parse(meal.getStrSource()));
-            startActivity(intentSource);
+        tvMap.setOnClickListener(v -> {
+            startActivity(new Intent(this, MapFragment.class));
+            Log.d(TAG, "Going to map from here too!");
         });
 
         //Adding to fave
