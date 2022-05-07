@@ -46,10 +46,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity
-            android:name=".GoogleMaps.MapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
         <!--
          <activity
             android:name=".activities.Login_Activity.Login_Activity"

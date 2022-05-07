@@ -30,7 +30,8 @@ import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
-
+//RESSOURCE: "Forground Service" lektion 5
+// WHOLE CLASS RESSOURCE: "Demo - Services"
 public class ForegroundService extends LifecycleService {
     public static final String CHANNEL_ID = "FoodServiceChannel";
     private static final String TAG = "Forground";

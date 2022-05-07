@@ -9,7 +9,7 @@ import java.util.List;
 
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
-
+//lektion 2 Demo viewmodel L2_6_clicker_app_viewmodel
 public class DetailsViewModel extends AndroidViewModel {
     private Repository repository;
     private List<Meals.Meal> FoodObject;

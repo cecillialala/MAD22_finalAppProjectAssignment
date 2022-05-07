@@ -34,7 +34,7 @@ import dk.au.group02_mad22_spring_appproject.repository.CategoryView;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
 
 public class CategoryFragment extends Fragment implements CategoryView {
-    Repository repo;
+
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     @BindView(R.id.progressBar)

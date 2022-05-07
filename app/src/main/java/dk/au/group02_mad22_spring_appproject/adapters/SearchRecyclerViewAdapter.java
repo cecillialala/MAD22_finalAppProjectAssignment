@@ -20,7 +20,8 @@ import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
-
+//https://developer.android.com/reference/android/widget/Adapter
+//Course Lesson3 ADAPTERS MAD
 public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecyclerViewAdapter.SearchViewHolder> {
 
     private List<Meals.Meal> mealsList;

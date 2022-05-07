@@ -16,6 +16,7 @@ import java.util.List;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 @Dao
+//RESSOURCE: "Room Demo"
 public interface MealsDAO {
     @Query("SELECT * FROM mealsTable")
     public List<Meals.Meal> getAllMeals();

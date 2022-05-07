@@ -73,7 +73,7 @@ public class Repository extends AppCompatActivity {
         public void getMealById(String mealName) {
 
 
-
+           // https://www.section.io/engineering-education/making-api-requests-using-retrofit-android/#:~:text=Retrofit%20is%20a%20type%2Dsafe,Retrofit%20to%20make%20API%20requests.
             Utils.getApi().getMealByName(mealName)
                     .enqueue(new Callback<Meals>() {
                         @Override
@@ -94,7 +94,7 @@ public class Repository extends AppCompatActivity {
                     });
         }
     }
-
+   // https://www.section.io/engineering-education/making-api-requests-using-retrofit-android/#:~:text=Retrofit%20is%20a%20type%2Dsafe,Retrofit%20to%20make%20API%20requests.
     public static class SearchPresenter {
         private SearchView view;
 
@@ -126,7 +126,7 @@ public class Repository extends AppCompatActivity {
 
         }
     }
-
+//https://www.section.io/engineering-education/making-api-requests-using-retrofit-android/#:~:text=Retrofit%20is%20a%20type%2Dsafe,Retrofit%20to%20make%20API%20requests.
     public static class CategoryPresenter {
         private CategoryView view;
 
@@ -167,7 +167,7 @@ public class Repository extends AppCompatActivity {
             this.view = view;
         }
 
-        /* https://square.github.io/retrofit/ */
+        /* https://www.section.io/engineering-education/making-api-requests-using-retrofit-android/#:~:text=Retrofit%20is%20a%20type%2Dsafe,Retrofit%20to%20make%20API%20requests. */
 
         public void getMeals() {
             view.showLoading();

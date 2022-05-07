@@ -5,7 +5,7 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-
+// https://guides.codepath.com/android/consuming-apis-with-retrofit
 public interface FoodApi {
     @GET("latest.php")
     Call<Meals> getMeal();

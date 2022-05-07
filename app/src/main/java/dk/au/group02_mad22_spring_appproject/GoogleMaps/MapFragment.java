@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import dk.au.group02_mad22_spring_appproject.R;
 
 public class MapFragment extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+    //RESSOURCE: Lektion 9 Maps
 
     private GoogleMap mMap;
 

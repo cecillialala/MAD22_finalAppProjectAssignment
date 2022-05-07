@@ -20,6 +20,9 @@ import dk.au.group02_mad22_spring_appproject.model.Categories;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+//https://developer.android.com/reference/android/widget/Adapter
+//Course Lesson3 ADAPTERS MAD
 public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHomeAdapter.RecyclerViewHolder> {
 
     private List<Categories.Category> categories;

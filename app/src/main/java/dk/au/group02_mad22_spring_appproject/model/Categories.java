@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Categories implements Serializable {
+    //RESSOURCE: "Rick and Morty Gallary" demo
 
     @SerializedName("categories")
     @Expose

@@ -7,7 +7,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+// https://www.section.io/engineering-education/making-api-requests-using-retrofit-android/#:~:text=Retrofit%20is%20a%20type%2Dsafe,Retrofit%20to%20make%20API%20requests.
 public class FoodClient {
 
     private static final String BASE_URL = "https://www.themealdb.com/api/json/v2/9973533/";
@@ -22,7 +22,8 @@ public class FoodClient {
     private static Interceptor provideLoggingInterceptor() {
         return new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
     }
-
+// https://www.baeldung.com/guide-to-okhttp
+//https://www.vogella.com/tutorials/JavaLibrary-OkHttp/article.html
     private static OkHttpClient provideOkHttp() {
         return new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)

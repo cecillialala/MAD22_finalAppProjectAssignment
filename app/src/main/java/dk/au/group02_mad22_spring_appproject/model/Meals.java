@@ -12,6 +12,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
+//RESSOURCE: "Rick and Morty Gallary" demo
 
 public class Meals {
 
@@ -207,14 +208,6 @@ public class Meals {
         public void setStrMeal(String strMeal) {
             this.strMeal = strMeal;
         }
-
-/*        public Object getStrDrinkAlternate() {
-            return strDrinkAlternate;
-        }*/
-
-/*        public void setStrDrinkAlternate(Object strDrinkAlternate) {
-            this.strDrinkAlternate = strDrinkAlternate;
-        }*/
 
         public String getStrCategory() {
             return strCategory;

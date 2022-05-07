@@ -13,7 +13,7 @@ import java.util.List;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
 
-// TODO: Repository need to be made
+//lektion 2 Demo viewmodel L2_6_clicker_app_viewmodel
 public class SearchViewModel extends AndroidViewModel {
 
     private Repository repository;
