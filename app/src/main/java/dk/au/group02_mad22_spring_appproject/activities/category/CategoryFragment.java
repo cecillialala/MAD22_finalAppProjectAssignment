@@ -4,6 +4,7 @@ import static dk.au.group02_mad22_spring_appproject.activities.mainactivity.Main
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,9 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 
 public class CategoryFragment extends Fragment implements CategoryView {
 
+    private static final String TAG = "CategoryFragment";
+    Repository repo;
+
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     @BindView(R.id.progressBar)
@@ -49,6 +53,7 @@ public class CategoryFragment extends Fragment implements CategoryView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d(TAG, "OnCreate view is up");
         View view = inflater.inflate(R.layout.fragment_category, container, false);
         ButterKnife.bind(this, view);
         return view;
@@ -87,6 +92,7 @@ public class CategoryFragment extends Fragment implements CategoryView {
 
     @Override
     public void setMeals(List<Meals.Meal> meals) {
+        Log.d(TAG, "Setting meals");
         RecyclerViewMealByCategory adapter =
                 new RecyclerViewMealByCategory(getActivity(), meals);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
@@ -104,11 +110,12 @@ public class CategoryFragment extends Fragment implements CategoryView {
 
     @Override
     public void onErrorLoading(String message) {
-        Utils.showDialogMessage(getActivity(), "Error ", message);
+        Utils.showDialogMessage(getActivity(), "Error found!", message);
     }
 
     @OnClick(R.id.cardCategory)
     public void onClick() {
+        Log.d(TAG, "Clicked");
         descDialog.setPositiveButton("CLOSE", (dialog, which) -> dialog.dismiss());
         descDialog.show();
     }

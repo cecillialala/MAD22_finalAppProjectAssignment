@@ -13,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
 import java.util.List;
@@ -44,11 +46,14 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 import dk.au.group02_mad22_spring_appproject.services.ForegroundService;
 
 public class MainActivity extends AppCompatActivity implements HomeView, NavigationView.OnNavigationItemSelectedListener {
-    private DrawerLayout drawer;
+    public static final String TAG = "MainActivity";
     public static final String EXTRA_CATEGORY = "category";
     public static final String EXTRA_POSITION = "position";
     public static final String EXTRA_DETAIL = "detail";
+
+    private DrawerLayout drawer;
     private MainViewModel vm;
+
     @BindView(R.id.viewPagerHeader) ViewPager viewPagerMeal;
     @BindView(R.id.recyclerCategory) RecyclerView recyclerViewCategory;
 
@@ -57,61 +62,74 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     /* https://jakewharton.github.io/butterknife/ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "Creating on Create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn_search=findViewById(R.id.btn_search);
-        ButterKnife.bind(this);
-        // TODO have to enable Service
-        //Starting the service
+
+       setupUI();
+        setupForegroundService();
+    }
+
+    private void setupForegroundService(){
         Intent serviceIntent = new Intent(this.getApplicationContext(), ForegroundService.class);
         startService(serviceIntent);
+    }
+
+    private void setupUI(){
+        Log.d(TAG, "Finding IDs and all sorts of stuff");
+        btn_search=findViewById(R.id.btn_search);
+
         vm = new ViewModelProvider(this).get(MainViewModel.class);
         presenter = new Repository.HomePresenter(this);
         presenter.getMeals();
         presenter.getCategories();
 
+        Log.d(TAG, "Toolbar coming up");
         /* https://stackoverflow.com/questions/31691859/setsupportactionbar-cannot-be-applied */
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Log.d(TAG, "Drawer coming up");
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Log.d(TAG, "Actionbar coming up");
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        btn_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GotoSearch();
-            }
-        });
+        ButterKnife.bind(this);
+
+        Log.d(TAG, "Button coming up");
+        btn_search.setOnClickListener(v -> GotoSearch());
     }
 
-
+    //TODO: Shimmer meal made by haerulmuttaqin at https://github.com/haerulmuttaqin/FoodsApp-starting-code/blob/master/app/src/main/res/layout/item_view_pager_header_shimmer.xml
     @Override
     public void showLoading() {
+        Log.d(TAG, "Placeholder hi");
         findViewById(R.id.shimmerMeal).setVisibility(View.VISIBLE);
         findViewById(R.id.shimmerCategory).setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
+        Log.d(TAG, "Placeholder bye");
         findViewById(R.id.shimmerMeal).setVisibility(View.GONE);
         findViewById(R.id.shimmerCategory).setVisibility(View.GONE);
     }
 
     @Override
     public void setMeal(List<Meals.Meal> meal) {
+        Log.d(TAG, "Setting meal");
         ViewPagerHeaderAdapter headerAdapter = new ViewPagerHeaderAdapter(meal, this);
         viewPagerMeal.setAdapter(headerAdapter);
         viewPagerMeal.setPadding(20, 0, 150, 0);
         headerAdapter.notifyDataSetChanged();
 
-        /* Idea taken from previous assignment */
+        // TODO /* Idea taken from previous assignment */
         headerAdapter.setOnItemClickListener((view, position) -> {
             TextView mealName = view.findViewById(R.id.mealName);
             Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
@@ -149,9 +167,11 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         switch (item.getItemId()) {
             case R.id.nav_map:
                 startActivity(new Intent(this, MapFragment.class));
+                Log.d(TAG, "Going to map");
                 break;
             case R.id.nav_favourite:
                 startActivity(new Intent(this, FavouriteFragment.class));
+                Log.d(TAG, "Going to favorites");
                 break;
 
         }
@@ -167,11 +187,12 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         } else {
             super.onBackPressed();
             finish();
+            Log.d(TAG, "Yeeting out");
         }
     }
     public void GotoSearch(){
-
         Intent searchList = new Intent(this, SearchActivity.class);
+        Log.d(TAG, "Going to search");
         startActivity(searchList);
 
     }
@@ -179,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        Log.d(TAG, "Going to logout screen");
         finish();
     }
 }

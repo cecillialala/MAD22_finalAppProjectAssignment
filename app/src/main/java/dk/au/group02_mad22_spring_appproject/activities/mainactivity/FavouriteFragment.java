@@ -4,6 +4,7 @@ import static dk.au.group02_mad22_spring_appproject.activities.mainactivity.Main
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ import dk.au.group02_mad22_spring_appproject.adapters.FavouriteAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 public class FavouriteFragment extends FragmentActivity implements FavouriteAdapter.OnItemClickListener{
+    public static final String TAG = "FavoriteFragment";
     FavouriteAdapter adapter;
     private List<Meals.Meal> listOfMeals;
 
@@ -35,14 +37,16 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_favourite);
 
+        settingUI();
+    }
+
+    private void settingUI(){
+        Log.d(TAG, "Setting up UI..... We are in");
         this.backButton = findViewById(R.id.btn_back);
-        this.backButton.setOnClickListener(view -> onBackPressed());
+        this.backButton.setOnClickListener(view -> onBackPressed()); //Could be done in main but we did it like this to show off our onBackPressed skills
 
         final RecyclerView mealsRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mealsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-
 
         MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
         List<Meals.Meal> list= vm.getFoodObject();
@@ -56,6 +60,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     /* Her får vi en bug */
     @Override
     public void onItemClick(int position) {
+        Log.d(TAG, "Clicking buttons");
         TextView mealName = findViewById(R.id.fave_meal_name);
         Intent detailIntent = new Intent(this, DetailActivity.class);
         Meals.Meal meal = listOfMeals.get(position);

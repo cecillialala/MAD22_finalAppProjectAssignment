@@ -30,103 +30,97 @@ import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity;
 
 public class Register extends AppCompatActivity {
-    public static final String TAG = "TAG";
+    public static final String TAG = "RegisterActivity";
     EditText mFullName,mEmail,mPassword,mPhone;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
-   // ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "Creating on Create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+       findIDs();
+        setupButtons();
+    }
+
+    private void findIDs(){
+        Log.d(TAG, "Finding IDs");
         mFullName   = findViewById(R.id.register_pt_nameID);
         mEmail      = findViewById(R.id.login_pt_mailID);
         mPassword   = findViewById(R.id.login_pt_passwordID);
-       // mPhone      = findViewById(R.id.phone);
         mRegisterBtn= findViewById(R.id.Register_Btn);
         mLoginBtn   = findViewById(R.id.createText);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+    }
 
+    private void setupButtons(){
+        Log.d(TAG, "Setting buttons and such");
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
+        mRegisterBtn.setOnClickListener(v -> {
+            final String email = mEmail.getText().toString().trim();
+            String password = mPassword.getText().toString().trim();
+            final String fullName = mFullName.getText().toString();
 
+            if (TextUtils.isEmpty(email)) {
+                mEmail.setError("Email is Required.");
+                return;
+            }
 
-        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
-                final String fullName = mFullName.getText().toString();
-              //  final String phone = mPhone.getText().toString();
+            if (TextUtils.isEmpty(password)) {
+                mPassword.setError("Password is Required.");
+                return;
+            }
 
-                if (TextUtils.isEmpty(email)) {
-                    mEmail.setError("Email is Required.");
-                    return;
-                }
+            if (password.length() < 6) {
+                mPassword.setError("Password Must be >= 6 Characters");
+                return;
+            }
 
-                if (TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is Required.");
-                    return;
-                }
+            fAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(Register.this, task -> {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser fuser = fAuth.getCurrentUser();
 
-                if (password.length() < 6) {
-                    mPassword.setError("Password Must be >= 6 Characters");
-                    return;
-                }
-
-                fAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser fuser = fAuth.getCurrentUser();
-
-                                    Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                    userID = fAuth.getCurrentUser().getUid();
-                                    DocumentReference documentReference = fStore.collection("users").document(userID);
-                                    Map<String,Object> user = new HashMap<>();
-                                    user.put("fName",fullName);
-                                    user.put("email",email);
-                                    user.put("password",password);
-                                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d(TAG, "onFailure: " + e.toString());
-                                        }
-                                    });
-                                    Toast.makeText(Register.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                   Toast.makeText(Register.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    //updateUI(null);
+                            Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
+                            userID = fAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fStore.collection("users").document(userID);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("fName",fullName);
+                            user.put("email",email);
+                            user.put("password",password);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
                                 }
-                            }
-                        });
-            }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "onFailure: " + e.toString());
+                                }
+                            });
+                            Toast.makeText(Register.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(Register.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            //updateUI(null);
+                        }
+                    });
         });
-        mLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            }
-        });
+        mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),LoginActivity.class)));
     }
 }

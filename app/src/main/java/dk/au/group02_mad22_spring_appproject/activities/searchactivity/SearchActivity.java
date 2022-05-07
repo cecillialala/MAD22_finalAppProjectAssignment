@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -40,12 +41,14 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
     Repository.SearchPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "Creating");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         initUI();
     }
 
     private void initUI() {
+        Log.d(TAG, "UI initializing...... we are in");
         ButterKnife.bind(this);
         presenter = new Repository.SearchPresenter(this);
 
@@ -55,20 +58,10 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         searchBtn = findViewById(R.id.searchBtn);
-        searchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onSearch();
-            }
-        });
+        searchBtn.setOnClickListener(view -> onSearch());
 
         backBtn = findViewById(R.id.searchBackBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBack();
-            }
-        });
+        backBtn.setOnClickListener(view -> onBack());
     }
 
     private void onBack() {
@@ -77,17 +70,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
 
     private void onSearch() {
         searchTxt = editSearchText.getText().toString().toLowerCase();
+        Log.d(TAG, "Searching set");
         presenter.getMealByName(searchTxt);
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 
     @Override
@@ -120,6 +104,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
 
     @Override
     public void setMeals(List<Meals.Meal> meals) {
+        Log.d(TAG, "Setting meal");
         SearchRecyclerViewAdapter searchAdapter = new SearchRecyclerViewAdapter(meals, this);
         recyclerViewSearch.setAdapter(searchAdapter);
         searchAdapter.notifyDataSetChanged();

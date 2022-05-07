@@ -2,6 +2,7 @@ package dk.au.group02_mad22_spring_appproject.activities.category;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,7 @@ import dk.au.group02_mad22_spring_appproject.model.Categories;
 //https://www.journaldev.com/10439/android-butterknife-example
 //https://developer.android.com/reference/android/content/Intent
 public class CategoryActivity extends AppCompatActivity {
-
+    private static final String TAG = "CategoryActivity";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.tabLayout)
@@ -32,16 +33,18 @@ public class CategoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "OnCreate created");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         ButterKnife.bind(this);
 
-        initActionBar();
-        initIntent();
+        setupActionBar();
+        setupIntent();
 
     }
 
-    private void initIntent() {
+    private void setupIntent() {
+        Log.d(TAG, "Intent is up");
         Intent intent = getIntent();
         List<Categories.Category> categories =
                 (List<Categories.Category>) intent.getSerializableExtra
@@ -56,7 +59,8 @@ public class CategoryActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    private void initActionBar() {
+    private void setupActionBar() {
+        Log.d(TAG, "Actionbar is up");
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,6 +72,7 @@ public class CategoryActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
+                Log.d(TAG, "Going back");
                 break;
         }
         return true;

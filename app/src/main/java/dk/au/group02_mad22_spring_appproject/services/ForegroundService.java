@@ -157,7 +157,7 @@ private List<Meals.Meal> foodlist;
             Log.d(TAG, "createNotification33: "+ randomMeal);
             Notification notification = new NotificationCompat.Builder(ForegroundService.this, CHANNEL_ID)
                     .setContentTitle("Get Fat")
-                    .setContentText(getString(R.string.suggestion)+randomMeal.getStrMeal()+"?")
+                    .setContentText(getString(R.string.suggestion)+" " + randomMeal.getStrMeal()+"?")
                     .setSmallIcon(R.drawable.ic_baseline_restaurant_24)
                     .build();
             Log.d(TAG, "createNotification33: "+ randomMeal.getStrMeal());
