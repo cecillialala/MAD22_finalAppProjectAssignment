@@ -1,4 +1,4 @@
-package dk.au.group02_mad22_spring_appproject.viewmodels;
+package dk.au.group02_mad22_spring_appproject.ViewModel;
 
 import android.app.Application;
 
@@ -11,7 +11,6 @@ import com.google.common.util.concurrent.ListenableFuture;
 import java.util.List;
 
 import dk.au.group02_mad22_spring_appproject.model.Meals;
-import dk.au.group02_mad22_spring_appproject.models.Meal;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
 
 // TODO: Repository need to be made

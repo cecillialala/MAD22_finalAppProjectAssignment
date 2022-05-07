@@ -1,7 +1,6 @@
 package dk.au.group02_mad22_spring_appproject.activities.searchactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -24,12 +22,10 @@ import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouriteFragment;
-import dk.au.group02_mad22_spring_appproject.adapters.RecyclerViewMealByCategory;
 import dk.au.group02_mad22_spring_appproject.adapters.SearchRecyclerViewAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
 import dk.au.group02_mad22_spring_appproject.repository.SearchView;
-import dk.au.group02_mad22_spring_appproject.viewmodels.SearchViewModel;
 
 public class SearchActivity extends AppCompatActivity implements SearchView {
 
