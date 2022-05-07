@@ -166,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            finish();
         }
     }
     public void GotoSearch(){

@@ -190,13 +190,13 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if (!meal.getStrIngredient12().isEmpty()) {
             tvIngredients.append("\n \u2022 " + meal.getStrIngredient12());
         }
-        if (!meal.getStrIngredient13().isEmpty()) {
+        if (meal.getStrIngredient13()!= null ) {
             tvIngredients.append("\n \u2022 " + meal.getStrIngredient13());
         }
-        if (!meal.getStrIngredient14().isEmpty()) {
+        if (meal.getStrIngredient14() != null && !meal.getStrIngredient14().trim().isEmpty()) {
             tvIngredients.append("\n \u2022 " + meal.getStrIngredient14());
         }
-        if (!meal.getStrIngredient15().isEmpty()) {
+        if (meal.getStrIngredient15() != null && !meal.getStrIngredient15().trim().isEmpty()) {
             tvIngredients.append("\n \u2022 " + meal.getStrIngredient15());
         }
         if (meal.getStrIngredient16() != null && !meal.getStrIngredient16().trim().isEmpty()){

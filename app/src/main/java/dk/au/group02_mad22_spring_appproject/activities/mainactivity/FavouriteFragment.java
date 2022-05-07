@@ -41,7 +41,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
         final RecyclerView mealsRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mealsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // TODO Lav den om til HomeViewModel
+
 
 
         MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);

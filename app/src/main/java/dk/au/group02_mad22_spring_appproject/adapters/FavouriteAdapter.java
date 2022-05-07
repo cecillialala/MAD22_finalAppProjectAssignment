@@ -49,7 +49,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     public void onBindViewHolder(@NonNull FavouriteAdapter.ViewHolder holder, int position) {
         holder.faveMealName.setText(meals.get(position).getStrMeal());
         //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
-// TODO her
+
        //Glide.with(holder.faveMealImage.getContext()).load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
         Picasso.get().load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
     }

@@ -108,6 +108,7 @@
                     android:clipToPadding="false"
                     android:foregroundGravity="center"
                     android:overScrollMode="never" />
+
                 <include
                     android:id="@+id/shimmerMeal"
                     layout="@layout/item_view_pager_header_shimmer" />
