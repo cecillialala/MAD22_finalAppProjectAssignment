@@ -17,7 +17,7 @@
     <string name="get_fat" translatable="false">"Get Fat"</string>
     <string name="main_button_exit" translatable="false">Exit</string>
     <string name="main_button_search">Search</string>
-    <string name="meal_categories">meal_categories</string>
+    <string name="meal_categories">Meal Categories</string>
     <string name="search_your_recipes">Search Your Recipes…</string>
 
     <string name="category">Category</string>
@@ -50,6 +50,8 @@
     <string name="create_and_eat">Create a free account and get eating!</string>
     <string name="by_agreeing_part_1">By registering you agree to Get Fats</string>
     <string name="by_agreeing_part_2">Terms and Services and Privacy Policy</string>
+    <string name="search_button">SEARCH FOR RECIPES</string>
+    <string name="detailed_button_guide">Need visual guidance or a way to find the nearest supermarket? We got your back! Just press the button and we will take care of the rest!</string>
 
 
 </resources>

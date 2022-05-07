@@ -4,15 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryText"
     tools:context=".activities.mainactivity.FavouriteFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        />
+        android:orientation="vertical"
+        android:paddingHorizontal="100dp"
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/padding_medium_14"
+            android:paddingLeft="@dimen/padding_mediumbig_16"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="32dp"
+                android:layout_height="24dp"
+                android:background="@drawable/go_back"
+                android:backgroundTint="@color/colorBackground"
+                ></Button>
+
+            <TextView
+                android:paddingLeft="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rammetto_one"
+                android:text="@string/favorite"
+                android:textColor="@color/dark_light_header"
+                android:textSize="60dp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp" />
+
+    </LinearLayout>
 </RelativeLayout>

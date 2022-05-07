@@ -13,7 +13,7 @@
     <string name="meal_categories">Mad Kategorier</string>
     <string name="search_your_recipes">Søg på dine opskrifter</string>
     <string name="category">Kategori</string>
-    <string name="country">Oprindelsesland</string>
+    <string name="country">Oprindelse</string>
     <string name="instructions">INSTRUKTIONER</string>
     <string name="md_menu">Menu oversigt</string>
     <string name="md_map">Kort</string>
@@ -35,4 +35,6 @@
     <string name="by_agreeing_part_2">Brugervilkår og Privat Politik</string>
     <string name="main_button_back">TILBAGE</string>
     <string name="search_bar_hint">Søg efter din favorit ret!</string>
+    <string name="search_button">SØG EFTER OPSKRIFTER</string>
+    <string name="detailed_button_guide">Brug for en visuel guide eller rutevejledning til nærmeste supermarked? Frygt ej! Bare tryk på knappen så klare vi resten!</string>
 </resources>
