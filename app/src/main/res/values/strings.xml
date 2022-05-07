@@ -10,6 +10,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="search_bar_hint">Search for your favourite meal!</string>
     <string name="categories">"Categories"</string>
     <string name="menu" translatable="false">"Menu"</string>
     <string name="menu_bon_apetit" translatable="false">"Bon Apetit!"</string>
@@ -36,8 +37,9 @@
 
 
     <string name="Login" translatable="false">Login_btn</string>
-    <string name="login_btn">Login</string>
+    <string name="login_btn" translatable="false">Login</string>
     <string name="Register_btn">Create Account</string>
+    <string name="main_button_back">BACK</string>
     <string name="title_activity_maps" translatable="false">MapsActivity</string>
     <string name="map">MAP</string>
     <string name="login_and_see">Login and see your favorite meals!</string>
