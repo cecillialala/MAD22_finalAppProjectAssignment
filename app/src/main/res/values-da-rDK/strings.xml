@@ -37,4 +37,6 @@
     <string name="search_bar_hint">Søg efter din favorit ret!</string>
     <string name="search_button">SØG EFTER OPSKRIFTER</string>
     <string name="detailed_button_guide">Brug for en visuel guide eller rutevejledning til nærmeste supermarked? Frygt ej! Bare tryk på knappen så klare vi resten!</string>
+    <string name="try_mc_fake">Prøv en McD opskrift!</string>
+    <string name="add_fake">Tilføj egen opskrift!</string>
 </resources>

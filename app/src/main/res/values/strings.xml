@@ -52,6 +52,9 @@
     <string name="by_agreeing_part_2">Terms and Services and Privacy Policy</string>
     <string name="search_button">SEARCH FOR RECIPES</string>
     <string name="detailed_button_guide">Need visual guidance or a way to find the nearest supermarket? We got your back! Just press the button and we will take care of the rest!</string>
+    <string name="McD_fake" translatable="false">Try McD recepies</string>
+    <string name="try_mc_fake">Try a McD recepie!</string>
+    <string name="add_fake">Add your own recipe!</string>
 
 
 </resources>

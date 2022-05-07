@@ -5,16 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+   android:paddingHorizontal="100dp"
     android:background="@color/colorPrimaryText"
     tools:context=".activities.searchactivity.SearchActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:orientation="vertical"
+
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="@dimen/padding_medium_14"
             android:orientation="horizontal">
@@ -46,7 +48,7 @@
 
             <EditText
                 android:id="@+id/editSearch"
-                android:layout_width="285dp"
+                android:layout_width="485dp"
                 android:layout_height="wrap_content"
                android:layout_marginHorizontal="@dimen/padding_medium_14"
                 android:background="@drawable/round_corner_button"
@@ -56,16 +58,18 @@
                 android:minHeight="48dp"
                 android:textAlignment="center"
                 android:textColor="@color/light_undertitle_text"
-                android:textSize="@dimen/text_big_18"
+                android:textSize="@dimen/text_tablet_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/searchBtn"
-                android:background="@drawable/round_corner_button"
-                android:backgroundTint="@color/dark_light_header"
+                
+                android:layout_marginBottom="@dimen/padding_small_10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_button"
+                android:backgroundTint="@color/dark_light_header"
                 android:text="@string/main_button_search"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
