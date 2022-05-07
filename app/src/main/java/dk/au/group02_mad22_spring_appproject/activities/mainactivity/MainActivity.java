@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -32,6 +33,7 @@ import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
 import dk.au.group02_mad22_spring_appproject.activities.category.CategoryActivity;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
 import dk.au.group02_mad22_spring_appproject.activities.loginactivity.LoginActivity;
+import dk.au.group02_mad22_spring_appproject.activities.searchactivity.SearchActivity;
 import dk.au.group02_mad22_spring_appproject.adapters.RecyclerViewHomeAdapter;
 import dk.au.group02_mad22_spring_appproject.adapters.ViewPagerHeaderAdapter;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
@@ -51,12 +53,13 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     @BindView(R.id.recyclerCategory) RecyclerView recyclerViewCategory;
 
     Repository.HomePresenter presenter;
-
+    Button btn_search;
     /* https://jakewharton.github.io/butterknife/ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn_search=findViewById(R.id.btn_search);
         ButterKnife.bind(this);
         // TODO have to enable Service
         //Starting the service
@@ -79,7 +82,15 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GotoSearch();
+            }
+        });
     }
+
 
     @Override
     public void showLoading() {
@@ -157,7 +168,12 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
             super.onBackPressed();
         }
     }
+    public void GotoSearch(){
 
+        Intent searchList = new Intent(this, SearchActivity.class);
+        startActivity(searchList);
+
+    }
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();//logout

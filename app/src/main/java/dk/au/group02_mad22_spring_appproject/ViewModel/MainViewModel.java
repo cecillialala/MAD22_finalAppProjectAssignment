@@ -23,6 +23,7 @@ public class MainViewModel extends AndroidViewModel {
     public List<Meals.Meal> getFoodObject() {
         return repository.getAllMeals();
     }
+
     public void addMeals(Meals.Meal MealsName){
         repository.insertAllMeals(MealsName);
     }

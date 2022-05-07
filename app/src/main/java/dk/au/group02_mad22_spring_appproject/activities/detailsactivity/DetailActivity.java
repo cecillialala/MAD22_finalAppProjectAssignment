@@ -153,7 +153,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         tvCountry.setText(meal.getStrArea());
         tvInstructions.setText(meal.getStrInstructions());
 
-        //Ingredients
+        //region Ingredients
         if (!meal.getStrIngredient1().isEmpty()) {
             tvIngredients.append("\n \u2022 " + meal.getStrIngredient1());
         }
@@ -276,6 +276,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         if (meal.getStrMeasure20() != null && !meal.getStrMeasure20().trim().isEmpty()) {
             tvMeasures.append("\n : " + meal.getStrMeasure20());
         }
+        //endregion
 
         tvYoutube.setOnClickListener(v -> {
             Intent intentYoutube = new Intent(Intent.ACTION_VIEW);
