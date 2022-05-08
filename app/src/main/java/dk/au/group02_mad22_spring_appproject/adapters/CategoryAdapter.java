@@ -13,7 +13,7 @@ import dk.au.group02_mad22_spring_appproject.activities.category.CategoryFragmen
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 
 public class CategoryAdapter extends FragmentPagerAdapter {
-
+    //Course Lesson3 ADAPTERS MAD
     private List<Categories.Category> categories;
 
     public CategoryAdapter(FragmentManager fm, List<Categories.Category> categories) {

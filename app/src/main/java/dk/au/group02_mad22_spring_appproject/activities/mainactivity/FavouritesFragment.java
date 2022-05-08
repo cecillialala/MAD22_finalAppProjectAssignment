@@ -21,7 +21,7 @@ import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
 import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailsActivity;
 import dk.au.group02_mad22_spring_appproject.adapters.FavouritesAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
-
+// lektion 8
 public class FavouritesFragment extends FragmentActivity implements FavouritesAdapter.OnItemClickListener{
     public static final String TAG = "FavoriteFragment";
     FavouritesAdapter adapter;
