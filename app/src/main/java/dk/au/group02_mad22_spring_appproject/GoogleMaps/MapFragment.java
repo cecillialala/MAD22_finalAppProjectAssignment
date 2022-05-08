@@ -58,13 +58,6 @@ public class MapFragment extends FragmentActivity implements OnMapReadyCallback,
                 getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    Activity#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for Activity#requestPermissions for more details.
 
             //https://developer.android.com/training/permissions/requesting
             ActivityCompat.requestPermissions(

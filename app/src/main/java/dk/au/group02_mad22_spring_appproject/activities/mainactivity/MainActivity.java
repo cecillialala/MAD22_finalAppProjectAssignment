@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         btn_search.setOnClickListener(v -> GotoSearch());
     }
 
-    //TODO: Shimmer meal made by haerulmuttaqin at https://github.com/haerulmuttaqin/FoodsApp-starting-code/blob/master/app/src/main/res/layout/item_view_pager_header_shimmer.xml
+    //Shimmer meal made by haerulmuttaqin at https://github.com/haerulmuttaqin/FoodsApp-starting-code/blob/master/app/src/main/res/layout/item_view_pager_header_shimmer.xml
     @Override
     public void showLoading() {
         Log.d(TAG, "Placeholder hi");
@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
         viewPagerMeal.setPadding(20, 0, 150, 0);
         headerAdapter.notifyDataSetChanged();
 
-        // TODO /* Idea taken from previous assignment */
         headerAdapter.setOnItemClickListener((view, position) -> {
             TextView mealName = view.findViewById(R.id.mealName);
             Intent intent = new Intent(getApplicationContext(), DetailActivity.class);

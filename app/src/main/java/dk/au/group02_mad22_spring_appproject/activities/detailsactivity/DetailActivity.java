@@ -37,6 +37,7 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 */
 
 public class DetailActivity extends AppCompatActivity implements DetailView {
+    //https://www.youtube.com/watch?v=njTHtyzaBug
     private static final String TAG = "DetailActivity";
     private DetailsViewModel vm;
     private TextView tvCategory, tvCountry, tvInstructions, tvIngredients, tvMeasures, tvYoutube, tvMap;
