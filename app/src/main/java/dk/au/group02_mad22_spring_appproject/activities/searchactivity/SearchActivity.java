@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,8 +20,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
-import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
-import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouriteFragment;
+import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailsActivity;
+import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouritesFragment;
 import dk.au.group02_mad22_spring_appproject.adapters.SearchRecyclerViewAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.Repository;
@@ -93,7 +92,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
                 startActivity(new Intent(this, MapFragment.class));
                 break;
             case R.id.nav_favourite:
-                startActivity(new Intent(this, FavouriteFragment.class));
+                startActivity(new Intent(this, FavouritesFragment.class));
                 break;
             case android.R.id.home :
                 onBackPressed();
@@ -111,7 +110,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
 
         searchAdapter.setOnItemClickListener((view, position) -> {
             TextView mealName = view.findViewById(R.id.mealName);
-            Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+            Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
             intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
             startActivity(intent);
         });

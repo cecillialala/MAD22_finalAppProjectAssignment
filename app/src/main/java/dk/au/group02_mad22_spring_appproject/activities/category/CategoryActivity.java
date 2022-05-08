@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity;
-import dk.au.group02_mad22_spring_appproject.adapters.ViewPagerCategoryAdapter;
+import dk.au.group02_mad22_spring_appproject.adapters.CategoryAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 
 //https://www.journaldev.com/10439/android-butterknife-example
@@ -51,7 +51,7 @@ public class CategoryActivity extends AppCompatActivity {
                         (MainActivity.EXTRA_CATEGORY);
         int position = intent.getIntExtra(MainActivity.EXTRA_POSITION, 0);
 
-        ViewPagerCategoryAdapter adapter = new ViewPagerCategoryAdapter(
+        CategoryAdapter adapter = new CategoryAdapter(
                 getSupportFragmentManager(), categories);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

@@ -27,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dk.au.group02_mad22_spring_appproject.R;
-import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
+import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailsActivity;
 import dk.au.group02_mad22_spring_appproject.adapters.RecyclerViewMealByCategory;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
@@ -102,7 +102,7 @@ public class CategoryFragment extends Fragment implements CategoryView {
 
         adapter.setOnItemClickListener((view, position) -> {
             TextView mealName = view.findViewById(R.id.mealName);
-            Intent intent = new Intent(getActivity(), DetailActivity.class);
+            Intent intent = new Intent(getActivity(), DetailsActivity.class);
             intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
             startActivity(intent);
         });
