@@ -17,19 +17,19 @@ import java.util.List;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
-public class ViewPagerHeaderAdapter extends PagerAdapter {
+public class HeaderAdapter extends PagerAdapter {
 
     private List<Meals.Meal> meals;
     private Context context;
     private static ClickListener clickListener;
 
-    public ViewPagerHeaderAdapter(List<Meals.Meal> meals, Context context) {
+    public HeaderAdapter(List<Meals.Meal> meals, Context context) {
         this.meals = meals;
         this.context = context;
     }
 
     public void setOnItemClickListener(ClickListener clickListener) {
-        ViewPagerHeaderAdapter.clickListener = clickListener;
+        HeaderAdapter.clickListener = clickListener;
     }
 
     @Override

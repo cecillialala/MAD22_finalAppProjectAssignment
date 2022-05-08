@@ -17,15 +17,14 @@ import java.util.List;
 
 import dk.au.group02_mad22_spring_appproject.Database.AppDatabase;
 import dk.au.group02_mad22_spring_appproject.R;
-import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
 import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
-import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
-import dk.au.group02_mad22_spring_appproject.adapters.FavouriteAdapter;
+import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailsActivity;
+import dk.au.group02_mad22_spring_appproject.adapters.FavouritesAdapter;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
-public class FavouriteFragment extends FragmentActivity implements FavouriteAdapter.OnItemClickListener{
+public class FavouritesFragment extends FragmentActivity implements FavouritesAdapter.OnItemClickListener{
     public static final String TAG = "FavoriteFragment";
-    FavouriteAdapter adapter;
+    FavouritesAdapter adapter;
     private List<Meals.Meal> listOfMeals;
 
     Button backButton;
@@ -51,7 +50,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
         MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
         List<Meals.Meal> list= vm.getFoodObject();
         listOfMeals = list;
-        adapter = new FavouriteAdapter(list);
+        adapter = new FavouritesAdapter(list);
         mealsRecyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(this);
     }
@@ -62,7 +61,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     public void onItemClick(int position) {
         Log.d(TAG, "Clicking buttons");
         TextView mealName = findViewById(R.id.fave_meal_name);
-        Intent detailIntent = new Intent(this, DetailActivity.class);
+        Intent detailIntent = new Intent(this, DetailsActivity.class);
         Meals.Meal meal = listOfMeals.get(position);
 
         detailIntent.putExtra(EXTRA_DETAIL, mealName.getText().toString());

@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -19,7 +18,7 @@ import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 //https://developer.android.com/reference/android/widget/Adapter
 //Course Lesson3 ADAPTERS MAD
-public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
+public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.ViewHolder> {
     private static final String TAG = "FavoriteAdapter";
     List<Meals.Meal> meals;
     private OnItemClickListener mListener;
@@ -28,7 +27,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
         mListener = listener;
     }
 
-    public FavouriteAdapter(List<Meals.Meal> meals) {
+    public FavouritesAdapter(List<Meals.Meal> meals) {
         this.meals = meals;
     }
 
@@ -37,13 +36,13 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     }
 
     @Override
-    public FavouriteAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FavouritesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.meal_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FavouriteAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FavouritesAdapter.ViewHolder holder, int position) {
         holder.faveMealName.setText(meals.get(position).getStrMeal());
       Picasso.get().load(meals.get(position).getStrMealThumb()).into(holder.faveMealImage);
     }

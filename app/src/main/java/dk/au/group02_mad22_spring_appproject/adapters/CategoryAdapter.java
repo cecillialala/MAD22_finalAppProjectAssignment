@@ -12,11 +12,11 @@ import java.util.List;
 import dk.au.group02_mad22_spring_appproject.activities.category.CategoryFragment;
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 
-public class ViewPagerCategoryAdapter extends FragmentPagerAdapter {
+public class CategoryAdapter extends FragmentPagerAdapter {
 
     private List<Categories.Category> categories;
 
-    public ViewPagerCategoryAdapter(FragmentManager fm, List<Categories.Category> categories) {
+    public CategoryAdapter(FragmentManager fm, List<Categories.Category> categories) {
         // TODO Check this
         super(fm);
         this.categories = categories;

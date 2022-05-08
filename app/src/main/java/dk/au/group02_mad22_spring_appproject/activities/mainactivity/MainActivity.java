@@ -21,7 +21,6 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,14 +29,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
-import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
 import dk.au.group02_mad22_spring_appproject.ViewModel.MainViewModel;
 import dk.au.group02_mad22_spring_appproject.activities.category.CategoryActivity;
-import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailActivity;
+import dk.au.group02_mad22_spring_appproject.activities.detailsactivity.DetailsActivity;
 import dk.au.group02_mad22_spring_appproject.activities.loginactivity.LoginActivity;
 import dk.au.group02_mad22_spring_appproject.activities.searchactivity.SearchActivity;
 import dk.au.group02_mad22_spring_appproject.adapters.RecyclerViewHomeAdapter;
-import dk.au.group02_mad22_spring_appproject.adapters.ViewPagerHeaderAdapter;
+import dk.au.group02_mad22_spring_appproject.adapters.HeaderAdapter;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
 import dk.au.group02_mad22_spring_appproject.model.Categories;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
@@ -124,14 +122,14 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
     @Override
     public void setMeal(List<Meals.Meal> meal) {
         Log.d(TAG, "Setting meal");
-        ViewPagerHeaderAdapter headerAdapter = new ViewPagerHeaderAdapter(meal, this);
+        HeaderAdapter headerAdapter = new HeaderAdapter(meal, this);
         viewPagerMeal.setAdapter(headerAdapter);
         viewPagerMeal.setPadding(20, 0, 150, 0);
         headerAdapter.notifyDataSetChanged();
 
         headerAdapter.setOnItemClickListener((view, position) -> {
             TextView mealName = view.findViewById(R.id.mealName);
-            Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+            Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
             intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
             startActivity(intent);
         });
@@ -169,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements HomeView, Navigat
                 Log.d(TAG, "Going to map");
                 break;
             case R.id.nav_favourite:
-                startActivity(new Intent(this, FavouriteFragment.class));
+                startActivity(new Intent(this, FavouritesFragment.class));
                 Log.d(TAG, "Going to favorites");
                 break;
 

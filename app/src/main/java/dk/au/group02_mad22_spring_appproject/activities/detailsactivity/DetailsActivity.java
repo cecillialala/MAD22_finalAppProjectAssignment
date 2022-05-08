@@ -24,7 +24,7 @@ import java.util.List;
 import dk.au.group02_mad22_spring_appproject.GoogleMaps.MapFragment;
 import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.ViewModel.DetailsViewModel;
-import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouriteFragment;
+import dk.au.group02_mad22_spring_appproject.activities.mainactivity.FavouritesFragment;
 import dk.au.group02_mad22_spring_appproject.api.Utils;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 import dk.au.group02_mad22_spring_appproject.repository.DetailView;
@@ -36,7 +36,7 @@ import dk.au.group02_mad22_spring_appproject.repository.Repository;
 *  and also it handles recycling which is great
 */
 
-public class DetailActivity extends AppCompatActivity implements DetailView {
+public class DetailsActivity extends AppCompatActivity implements DetailView {
     //https://www.youtube.com/watch?v=njTHtyzaBug
     private static final String TAG = "DetailActivity";
     private DetailsViewModel vm;
@@ -131,7 +131,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
                 Log.d(TAG, "Going to map");
                 break;
             case R.id.nav_favourite:
-                startActivity(new Intent(this, FavouriteFragment.class));
+                startActivity(new Intent(this, FavouritesFragment.class));
                 Log.d(TAG, "Going to favorites");
                 break;
             case android.R.id.home :
