@@ -30,6 +30,7 @@ import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity;
 
 public class Register extends AppCompatActivity {
+   // https://www.youtube.com/watch?v=tbh9YaWPKKs&t=0s
     public static final String TAG = "RegisterActivity";
     EditText mFullName,mEmail,mPassword,mPhone;
     Button mRegisterBtn;

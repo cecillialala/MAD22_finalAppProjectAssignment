@@ -20,7 +20,7 @@ import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.model.Meals;
 
 public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerViewMealByCategory.RecyclerViewHolder> {
-
+    //Course Lesson3 ADAPTERS MAD
     private List<Meals.Meal> meals;
     private Context context;
     private static ClickListener clickListener;

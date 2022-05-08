@@ -23,6 +23,8 @@ import dk.au.group02_mad22_spring_appproject.R;
 import dk.au.group02_mad22_spring_appproject.activities.mainactivity.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
+
+    //https://www.youtube.com/watch?v=tbh9YaWPKKs&t=0s
     private static final String TAG = "LoginActivity";
 
     EditText mEmail,mPassword;

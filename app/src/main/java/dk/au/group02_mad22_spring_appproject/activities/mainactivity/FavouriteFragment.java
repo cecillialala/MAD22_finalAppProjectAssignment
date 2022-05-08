@@ -57,7 +57,7 @@ public class FavouriteFragment extends FragmentActivity implements FavouriteAdap
     }
 
 
-    /* Her får vi en bug */
+
     @Override
     public void onItemClick(int position) {
         Log.d(TAG, "Clicking buttons");
